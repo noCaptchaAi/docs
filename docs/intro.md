@@ -2,46 +2,100 @@
 sidebar_position: 1
 ---
 
-# Tutorial Intro
+### How the api work to solving captcha?
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Currently the api solve captcha images and send correct result to solve the capctah.
 
-## Getting Started
-
-Get started by **creating a new site**.
-
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+### How i can use the api?
+You need to get the captcha images url programmatically, convert them to base64 and send them to the api in a specifice format.
 
 ### What you'll need
 
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+Signup an account, you will receive UID and API key on your email. You need them to send a solving request to the api.
 
-## Generate a new site
+### How to send a solve request
+We have two api endpoint.
+For free user:
+https://free.nocaptchaai.com/api/solve
 
-Generate a new Docusaurus site using the **classic template**.
+For paid user:
+https://pro.nocaptchaai.com/api/solve
 
-The classic template will automatically be added to your project after you run the command:
+Free user is not allowed to send to this endpoint.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+In header you need to send uid an apikey. IE:
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+'uid': {your uid}, 'apikey': {your api key}
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+In body please send bellow required data as json.
 
-## Start your site
+Filed     Type    Description     Example
 
-Run the development server:
+target    string  What AI need to find on the images  Please click each image containing an airplane.
 
-```bash
-cd my-website
-npm run start
-```
+sitekey   string  sitekey for the target website.  0eeb15dc-a802-43b1-9a2a-1f2c03e0102d 
 
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+site      url as string format    website.com/signup
 
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+method    allowed string          hcaptcha_base64
 
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+Please check this json https://raw.githubusercontent.com/shimuldn/hCaptchaSolverApi/main/usage_examples/base64-body-format.json
+
+<!-- {"images": {"0": "base64 of the image", "1": "base64 of the image", "3":"base64 of the image", ....}, 
+"target": "Please click each image containing a bird.", "method": "hcaptcha_base64", "sitekey": "sitekey", "site": "site"} -->
+
+### API response
+
+API will send your bellow response
+
+If successful and order in queue
+
+{
+    "createdat": 1662353086,
+    "id": "h-q7FBc9fXJ0V69ox4",
+    "status": "new",
+    "target": "airplane",
+    "url": "https://free.nocaptchaai.com/api/status?id=h-q7FBc9fXJ0V69ox4"
+}
+
+If successful and order processed (Only avaiable to pro user).
+
+{
+    "processing_time": "0.05s",
+    "solution": [
+        1,
+        3,
+        4,
+        6
+    ],
+    "status": "solved"
+}
+
+If error you will received error releted message like bellow
+
+{
+    "message": "Invalid APIKEY",
+    "status": "Unauthorized"
+}
+
+### Get solved result
+
+If successful
+
+{
+    "processing_time": "0.05s",
+    "solution": [
+        1,
+        3,
+        4,
+        6
+    ],
+    "status": "solved"
+}
+
+If error you will received error releted message like bellow
+
+{
+    "message": "Error message",
+    "status": "error"
+}
