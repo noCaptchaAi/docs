@@ -17,8 +17,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Docs - 5min ⏱️
+            to="/docs/Quickstart">
+            Quickstart ⏱️
           </Link>
         </div>
       </div>
@@ -30,8 +30,9 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="Solve hcaptcha challenges with noCaptcha HTTP API, send base64 images and get solves blazing fast ⚡
+      works with puppeteer, selenium, playwright etc out of box">
       <HomepageHeader />
       <main>
         <HomepageFeatures />

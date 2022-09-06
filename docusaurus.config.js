@@ -6,9 +6,9 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'noCaptcha Ai Docs',
-  tagline: 'use http api to solve hcaptcha',
-  url: 'https://nocaptchaai.com',
+  title: 'The only hCaptcha solver AI you need',
+  tagline: 'The only hCaptcha solver AI you need, Solve hcaptcha challenges with noCaptcha HTTP API, send base64 images and get solves blazing fast ⚡ works with puppeteer, selenium, playwright etc out of box',
+  url: 'https://noCaptchaAi.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -16,15 +16,24 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'noCaptcha Ai', // Usually your GitHub org/user name.
-  projectName: 'noCaptcha Ai Docs', // Usually your repo name.
+  organizationName: 'noCaptchaAi', // Usually your GitHub org/user name.
+  projectName: 'noCaptchaAi Docs', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale:'en',
+    locales: ['en', 'de', 'cn', 'tw', 'es','jp', 'br', 'fr'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-US',
+      },
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      cn: {
+        htmlLang: 'zh-CN',
+      },
+    },
   },
 
   presets: [
@@ -37,14 +46,14 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://nocaptchaai.com/',
+            'https://github.com/noCaptchaAi/docs',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://nocaptchaai.com/',
+            'https://github.com/noCaptchaAi/blog',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -57,41 +66,46 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        // title: 'My Site',
-        // logo: {
-        //   alt: 'My Site Logo',
-        //   src: 'img/logo.svg',
-        // },
+        title: 'noCaptchaAi',
+        logo: {
+          alt: 'nocaptchaai.com Logo',
+          src: 'img/nocaptchaai.com.png',
+        },
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Docs',
+            label: '📄 Docs',
           },
-          // { 
-          //   type: 'doc',
-          //   docId: 'intro',
-          //   position: 'left',
-          //   label: 'Example',
-          // },
-          // {to: '/blog', label: 'Blog', position: 'left'},
-          // {
-          //   href: 'https://github.com/facebook/docusaurus',
-          //   label: 'GitHub',
-          //   position: 'right',
-          // },
+          { 
+            type: 'doc',
+            docId: 'Quickstart',
+            position: 'left',
+            label: '⚡ Quickstart',
+          },
+          {to: '/blog', label: 'Changelog', position: 'right'},
+          {
+            href: 'https://nocaptchaai.com',
+            label: 'Website',
+            position: 'right',
+          },
+          {
+            href: 'https://github.com/shimuldn/hCaptchaSolverApi',
+            label: 'Github',
+            position: 'right',
+          },
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'noCaptchaAi',
             items: [
               {
-                label: 'docs',
-                to: '/docs/intro',
+                label: 'Solve hcaptcha challenges with noCaptcha HTTP API, send base64 images and get solves blazing fast ⚡ works with puppeteer, selenium, playwright etc out of box',
+                to: '/docs/Quickstart',
               },
             ],
           },
@@ -99,34 +113,31 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.gg/E7FfzhZqzA',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Telegram',
+                href: 'https://t.me/hCaptchaSolverApi',
               },
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
+                href: 'https://github.com/shimuldn/hCaptchaSolverApi',
+              }
+            ],
+          },
+          {
+            title: 'Legal & Others',
+            items: [
+              {
+                label: 'changelog',
+                to: '/blog',
+              }
+              
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} noCaptchaAi.com`,
       },
       prism: {
         theme: lightCodeTheme,

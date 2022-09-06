@@ -1,1 +1,1 @@
-noCaptcha Ai Docs
+noCaptchaAi Documentation
