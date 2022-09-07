@@ -137,7 +137,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} noCaptchaAi.com`,
+        copyright: `Copyright © ${new Date().getFullYear()} noCaptchaAi.com  |   Disclaimer: Even the healing potion has a bad side, one may drown in it. Our api only detects images of various kinds, we're not responsible if someone used our service to facilitate any kind of harmful or offensive task we have no way to know because we don't do tracking and nor wish to. We simply provide a service that detects images with our api. Our users are responsible for their actions.`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -30,7 +30,7 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`${siteConfig.title}`}
+      // title={`${siteConfig.title}`}
       description="Solve hcaptcha challenges with noCaptcha HTTP API, send base64 images and get solves blazing fast ⚡
       works with puppeteer, selenium, playwright etc out of box">
       <HomepageHeader />
