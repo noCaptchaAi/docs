@@ -1,22 +1,15 @@
 ---
 sidebar_position: 2
 ---
-
 GitHub ![GitHub Repo stars](https://img.shields.io/github/stars/shimuldn/hCaptchaSolverApi?style=flat-square)
 
 ### Get a Free or Paid `apikey`
 
 [Free trial credits 🔥 + API key 🔗](https://nocaptchaai.com/register)
 
-Promo 30000 solve/10$
 
-Unlimited plans, Custom api requirements for person/enterprise?
 
-[Dicsord](https://discord.gg/E7FfzhZqzA)
-or
-Write Us 📧 [mailto:ai@nocaptchaai.com](mailto:ai@nocaptchaai.com)
-
-### Quickest way to try with Userscript 
+## Quickest way to try with Userscript
 
 **[Click to Install from GitHub 🔗](https://github.com/noCaptchaAi/hCaptchaSolver.user.js)**
 
@@ -27,7 +20,6 @@ Write Us 📧 [mailto:ai@nocaptchaai.com](mailto:ai@nocaptchaai.com)
 
 ### QuickStart Example Scripts:
 
-
 - [Selenium.js](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/example-selenium.py)
 - [Puppeteer.js](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/puppeteer.js)
 - [Puppeteer2.js](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/puppeteer2.js)
@@ -37,7 +29,6 @@ Write Us 📧 [mailto:ai@nocaptchaai.com](mailto:ai@nocaptchaai.com)
 - [Playwright.js](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/playwright.js)
 - [Node.js](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/node.js)
 - [JavaScript.js](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/javascript.js)
-
 
 # Build your own Scripts
 

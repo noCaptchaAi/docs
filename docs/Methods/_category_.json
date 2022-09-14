@@ -1,6 +1,6 @@
 {
-  "label": "Docs - Extras",
-  "position": 3,
+  "label": "Api Methods",
+  "position": 4,
   "link": {
     "type": "generated-index"
   }

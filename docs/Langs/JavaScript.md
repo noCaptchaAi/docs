@@ -147,6 +147,10 @@ Glossary:
    * `target` = the text you see on hcaptcha popup describing the challenge
    * `method` = our internal param so keep as it is
    * `site` = your target domain
-   * `sitekey` = find the sitekey on your target html page: ``` <div class="h-captcha" data-sitekey="your_site_key"></div>```
-   * note: sitekey and site info collected to improve accuracy. we respect privacy.
+   * `sitekey` = find the sitekey on your target html page: 
+
+   ```
+   <div class="h-captcha" data-sitekey="your_site_key"></div>
+   ```
+note: sitekey and site info collected to improve accuracy. we respect privacy.
    

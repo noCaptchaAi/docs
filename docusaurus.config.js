@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'The only hCaptcha solver AI you need',
-  tagline: 'The only hCaptcha solver AI you need, Solve hcaptcha challenges with noCaptcha HTTP API, send base64 images and get solves blazing fast ⚡ works with puppeteer, selenium, playwright etc out of box',
+  title: 'Tired of being told you are not human?',
+  tagline: 'noCaptchaAi gives you superVision and turns you into a human again, online!',
   url: 'https://noCaptchaAi.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
@@ -74,7 +74,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'Intro',
             position: 'left',
             label: '📄 Docs',
           },
@@ -104,7 +104,7 @@ const config = {
             title: 'noCaptchaAi',
             items: [
               {
-                label: 'Solve hcaptcha challenges with noCaptcha HTTP API, send base64 images and get solves blazing fast ⚡ works with puppeteer, selenium, playwright etc out of box',
+                label: 'Ai based captcha image detection',
                 to: '/docs/Quickstart',
               },
             ],
@@ -127,17 +127,25 @@ const config = {
             ],
           },
           {
-            title: 'Legal & Others',
+            title: 'Legal & Blog',
             items: [
               {
                 label: 'changelog',
                 to: '/blog',
+              },
+              {
+                label: 'privacy',
+                to: '/docs/legal/privacy',
+              },
+              {
+                label: 'terms',
+                to: '/docs/legal/terms',
               }
               
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} noCaptchaAi.com  |   Disclaimer: Even the healing potion has a bad side, one may drown in it. Our api only detects images of various kinds, we're not responsible if someone used our service to facilitate any kind of harmful or offensive task we have no way to know because we don't do tracking and nor wish to. We simply provide a service that detects images with our api. Our users are responsible for their actions.`,
+        copyright: `Copyright © ${new Date().getFullYear()} noCaptchaAi.com  |  Disclaimer: Even the healing potion has a bad side, one may drown in it. Our api only detects images of various kinds, we're not responsible if someone used our service to facilitate any kind of harmful or offensive task we have no way to know because we don't do tracking and nor wish to. We simply provide a service that detects images with our api. We take no responsibility of our user actions.`,
       },
       prism: {
         theme: lightCodeTheme,
