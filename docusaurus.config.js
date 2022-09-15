@@ -42,6 +42,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -84,15 +85,25 @@ const config = {
             position: 'left',
             label: '⚡ Quickstart',
           },
-          {to: '/blog', label: 'updates', position: 'right'},
+          {to: '/blog', label: 'news', position: 'right'},
           {
             href: 'https://nocaptchaai.com',
-            label: 'Website',
+            label: 'Home',
             position: 'right',
           },
           {
             href: 'https://github.com/shimuldn/hCaptchaSolverApi',
             label: 'Github',
+            position: 'right',
+          },
+          {
+            href: 'https://discord.gg/E7FfzhZqzA',
+            label: 'Discord',
+            position: 'right',
+          },
+          {
+            href: 'https://t.me/noCaptchaAi',
+            label: 'Telegram',
             position: 'right',
           },
         ],
@@ -118,7 +129,7 @@ const config = {
               },
               {
                 label: 'Telegram',
-                href: 'https://t.me/hCaptchaSolverApi',
+                href: 'https://t.me/noCaptchaAi',
               },
               {
                 label: 'GitHub',
@@ -130,16 +141,16 @@ const config = {
             title: 'Legal & Blog',
             items: [
               {
-                label: 'updates',
+                label: 'news',
                 to: '/blog',
               },
               {
                 label: 'disclaimer',
-                to: '/docs/legal/disclaimer',
+                to: '/legal/disclaimer',
               },
               {
                 label: 'terms',
-                to: '/docs/legal/terms',
+                to: '/legal/terms',
               }
               
             ],

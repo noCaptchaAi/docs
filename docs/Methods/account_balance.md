@@ -18,36 +18,28 @@ https://pro.nocaptchaai.com/api/account/balance
 
 ```
 https://free.nocaptchaai.com/api/account/balance
-
 ```
 
 ```py
 
-solve = requests.post(self.shimul["solver"], json={
-        "images": i,
-        "target": g,
-        "data_type": "url",
-        "site": self.href,
-        "site_key": self.sitekey
-    }, headers={
-        "Content-type": "application/json",
-        "uid": self.shimul["uid"],
-        "apikey": self.shimul["key"]
-    }).text;
+# python requests
+import requests
+balance = requests.get('https://codeproxy.shimul.me/api/account/balance', headers={'uid': '', 'apikey': ''})
+
+print(balance.json())
 
 ```
 
 ```js
 //  axios
 var res = await axios({
-  method: "post",
-  url: "https://{plan}.nocaptchaai.com/api/solve",
+  method: "get",
+  url: "https://pro.nocaptchaai.com/api/account/balance",
   headers: {
     "Content-type": "application/json",
     uid: uid,
     apikey: apikey,
-  },
-  data: base64_json,
+  }
 });
 
 ```
