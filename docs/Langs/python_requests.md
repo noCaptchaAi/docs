@@ -1,0 +1,1 @@
+## [Github > python_requests.py](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/python_requests.py )

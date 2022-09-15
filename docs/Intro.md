@@ -3,7 +3,9 @@ sidebar_position: 1
 ---
 ### :wave: Hello from the Ai-Side
 
-noCaptchaAi takes 0.04s ~ 1s (to solve set of 18 images), Robust, Scaleable api with 995 uptime, and 99% accuracy
+### 0.04s ~ 1s solving speed
+
+#### Robust, Scaleable api with 99% uptime ~ 99% accuracy
 
 ## Prepaid Plans
 

@@ -1,7 +1,8 @@
 {
-  "label": "Api Methods",
-  "position": 4,
+  "label": "/api/ methods",
+  "position": 3,
   "link": {
-    "type": "generated-index"
+    "type": "generated-index",
+    "description": "available methods for base api"
   }
 }

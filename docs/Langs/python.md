@@ -1,0 +1,1 @@
+## [Github > example2.py](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/example2.py)

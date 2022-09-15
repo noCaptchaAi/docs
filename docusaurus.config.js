@@ -84,7 +84,7 @@ const config = {
             position: 'left',
             label: '⚡ Quickstart',
           },
-          {to: '/blog', label: 'Changelog', position: 'right'},
+          {to: '/blog', label: 'updates', position: 'right'},
           {
             href: 'https://nocaptchaai.com',
             label: 'Website',
@@ -130,7 +130,7 @@ const config = {
             title: 'Legal & Blog',
             items: [
               {
-                label: 'changelog',
+                label: 'updates',
                 to: '/blog',
               },
               {
@@ -145,7 +145,10 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} noCaptchaAi.com  |  Disclaimer: Even the healing potion has a bad side, one may drown in it. Our api only detects images of various kinds, we're not responsible if someone used our service to facilitate any kind of harmful or offensive task we have no way to know because we don't do tracking and nor wish to. We simply provide a service that detects images with our api. We take no responsibility of our user actions.`,
+        copyright: `Copyright © ${new Date().getFullYear()} noCaptchaAi.com
+
+        Does collect and store IP/country and the information you submit via form, only to serve our customers. We do not or ever will sell your information, Our promise. We do not collect personal identifiable/sensitive data.        Disclaimer:       
+        We're not responsible if someone used our service to facilitate any kind of harmful or offensive task, we have no way to know because we don't do tracking and nor wish to. Furthermore, we simply provide a service that detects images with our API. We take no responsibility for our user actions.`,
       },
       prism: {
         theme: lightCodeTheme,

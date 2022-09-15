@@ -5,7 +5,7 @@ sidebar_position: 2
 
 ### javaScript Example with `axios` and `fetch`
 
-```
+```js
 // if you wanna use axios, get from CDN from unpkg or jsdeliver, eg. unpkg: https://unpkg.com/axios@1.0.0-alpha.1/dist/axios.min.js
 // you need uid and apikey, get free here https://nocaptchaai.com
 
