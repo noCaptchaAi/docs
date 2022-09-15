@@ -1,7 +1,7 @@
 ---
 sidebar_position: 2
 
-id: selenium
+id: pythonpip
 title: selenium.py ! noCaptchaAi Docs
 hide_title: true
 sidebar_label: Selenium

@@ -134,8 +134,8 @@ const config = {
                 to: '/blog',
               },
               {
-                label: 'privacy',
-                to: '/docs/legal/privacy',
+                label: 'disclaimer',
+                to: '/docs/legal/disclaimer',
               },
               {
                 label: 'terms',
