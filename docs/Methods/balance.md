@@ -6,6 +6,16 @@ base: `https://{plan}.nocaptchaai.com/api`
 
 ### `base + /account/balance`
 
+```
+{
+    "plan id": "paid-1m-xxxxxxxxxx",
+    "plan type": "paid",
+    "planlimit": 1000000,
+    "status": "active",
+    "used": 689797
+}
+```
+
 #### Pro Plan
 ---
 
@@ -32,7 +42,7 @@ print(balance.json())
 
 ```js
 //  axios
-var res = await axios({
+const  res = await axios({
   method: "get",
   url: "https://pro.nocaptchaai.com/api/account/balance",
   headers: {

@@ -10,6 +10,11 @@ noCaptchaAi takes around 0.04s ~ 1s/solve Blazing fast hCaptcha solver based on 
 
 ### [Free trial credits 🔥 + API key 🔗](https://nocaptchaai.com/register)
 
+![hCaptchaSolverApi_Demo_Selenium](https://user-images.githubusercontent.com/4178343/180646819-324163a8-0c4c-4571-b01c-2f98ab8a1127.gif)
+<i>Selenium</i>
+
+
+
 
 
 ### Quickest way to try with Userscript

@@ -24,14 +24,10 @@ const config = {
   // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale:'en',
-    locales: ['en', 'de', 'cn', 'tw', 'es','jp', 'br', 'fr'],
+    locales: ['en'],
     localeConfigs: {
       en: {
         htmlLang: 'en-US',
-      },
-      // You can omit a locale (e.g. fr) if you don't need to override the defaults
-      cn: {
-        htmlLang: 'zh-CN',
       },
     },
   },
@@ -77,13 +73,13 @@ const config = {
             type: 'doc',
             docId: 'Intro',
             position: 'left',
-            label: '📄 Docs',
+            label: 'Pricing',
           },
-          { 
+          {
             type: 'doc',
-            docId: 'Quickstart',
+            docId: 'userscript',
             position: 'left',
-            label: '⚡ Quickstart',
+            label: 'Userscript',
           },
           {to: '/blog', label: 'news', position: 'right'},
           {
@@ -116,7 +112,7 @@ const config = {
             items: [
               {
                 label: 'Ai based captcha image detection',
-                to: '/docs/Quickstart',
+                to: '/',
               },
             ],
           },

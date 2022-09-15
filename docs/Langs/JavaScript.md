@@ -12,7 +12,7 @@ sidebar_position: 2
 const uid = ''
 const apikey = '' 
 
-var base64_json = {
+let base64_json = {
    images: {
    "0": "base64 hash from image",
    "1": "base64 hash from image",
@@ -41,7 +41,7 @@ var base64_json = {
 };
 
 //  axios
-var res = await axios({
+let res = await axios({
   method: "post",
   url: "https://free.nocaptchaai.com/api/solve",
   headers: {
