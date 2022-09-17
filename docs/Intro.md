@@ -14,7 +14,7 @@ sidebar_position: 1
 | Cost    | 5$  | 10$ | 20$ | 50$  | 150$ | 300$ |
 | Threads | -   | -   | -   | 10   | 15   | 25   |
 
-### Buy on [Dicsord 🔗](https://discord.gg/E7FfzhZqzA)
+### Buy on [Dicsord 🔗](https://discord.gg/E7FfzhZqzA) or [Telegram](https://t.me/noCaptchaAi)
 
 ## Unlimited Monthly Plans
 
@@ -26,4 +26,4 @@ sidebar_position: 1
 | Accuracy | 99%       | 99%       | 99%       | 99%       | 99%       | 99%       | 99%       | 99%       | 99%       |
 
 
-### Buy on [Dicsord 🔗](https://discord.gg/E7FfzhZqzA)
+### Buy on [Dicsord 🔗](https://discord.gg/E7FfzhZqzA) or [Telegram](https://t.me/noCaptchaAi)
