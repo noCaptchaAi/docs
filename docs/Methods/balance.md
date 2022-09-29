@@ -34,7 +34,7 @@ https://free.nocaptchaai.com/api/account/balance
 
 # python requests
 import requests
-balance = requests.get('https://codeproxy.shimul.me/api/account/balance', headers={'uid': '', 'apikey': ''})
+balance = requests.get('https://pro.nocaptchaai.com/api/account/balance', headers={'uid': '', 'apikey': ''})
 
 print(balance.json())
 
