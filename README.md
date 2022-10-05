@@ -1,1 +1,1 @@
-noCaptchaAi Documentation
+### https://docs.noCaptchaAi.com
