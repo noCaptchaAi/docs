@@ -30,7 +30,7 @@ let base64_json = {
   method: "hcaptcha_base64",
   sitekey: "sitekey",
   site: "website",
-  ln: "en", // language eg "cn" = chinese
+  ln: "en", // language eg "ru" = Russain
   softid:"script or repo name, applies only if you're a developer"
 };
 
