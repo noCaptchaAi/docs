@@ -30,8 +30,8 @@ let base64_json = {
   method: "hcaptcha_base64",
   sitekey: "sitekey",
   site: "website",
-  ln: "en", // language eg "ru" = Russain
-  softid:"script or repo name, applies only if you're a developer"
+  ln: "en", // (Optional) language eg "ru" = Russain
+  softid:"softid assigned by noCaptchaAi" // (Optional) Please contact us for softid to get 5% usages fee from paid user.
 };
 
 ({
