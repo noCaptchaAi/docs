@@ -2,10 +2,6 @@
 sidebar_position: 1
 ---
 
-base: `https://pro.nocaptchaai.com/api`
-
-### `base + /solve`
-
 #### Pro User
 ```
 https://pro.nocaptchaai.com/api/solve
@@ -49,9 +45,10 @@ let base64_json = {
 ```
 
 
-# Languages Supported
-```
-ln = "ru" = Russian / "zh" = Chinese / "pl" = Polish
+# Supported Languages
+
+```js
+ln = "en" // for Russian "ru" / For Chinese "zh" / For brazilian "pt" / For arabic "ar"
 ```
 
 ```
