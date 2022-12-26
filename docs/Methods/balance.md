@@ -7,21 +7,21 @@ sidebar_position: 3
 ---
 
 ```
-https://manage.nocaptchaai.com/api/user/get_balance
+https://manage.nocaptchaai.com/balance
 ```
 
 #### Free Plan
 ---
 
 ```
-https://free.nocaptchaai.com/api/user/free_balance
+https://free.nocaptchaai.com/balance
 ```
 
 ```py
 
 # python requests
 import requests
-balance = requests.get('https://manage.nocaptchaai.com/api/user/get_balance', headers={'apikey': ''})
+balance = requests.get('https://manage.nocaptchaai.com/balance', headers={'apikey': ''})
 
 print(balance.json())
 
@@ -31,7 +31,7 @@ print(balance.json())
 //  axios
 const  res = await axios({
   method: "get",
-  url: "https://manage.nocaptchaai.com/api/user/get_balance",
+  url: "https://manage.nocaptchaai.com/balance",
   headers: {
     "Content-type": "application/json",
     apikey: apikey,
