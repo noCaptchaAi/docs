@@ -27,7 +27,7 @@ https://pro.nocaptchaai.com/api/account/balance
 ---
 
 ```
-https://free.nocaptchaai.com/api/account/balance
+https://free.nocaptchaai.com/api/user/free_balance
 ```
 
 ```py
