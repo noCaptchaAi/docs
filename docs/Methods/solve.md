@@ -36,7 +36,6 @@ let base64_json = {
 
   headers: {
     "Content-type": "application/json",
-    uid: uid,
     apikey: apikey,
   },
   data: base64_json,
