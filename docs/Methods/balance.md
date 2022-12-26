@@ -2,25 +2,12 @@
 sidebar_position: 3
 ---
 
-base: `https://{plan}.nocaptchaai.com/api`
-
-### `base + /account/balance`
-
-```
-{
-    "plan id": "paid-1m-xxxxxxxxxx",
-    "plan type": "paid",
-    "planlimit": 1000000,
-    "status": "active",
-    "used": 689797
-}
-```
 
 #### Pro Plan
 ---
 
 ```
-https://pro.nocaptchaai.com/api/account/balance
+https://manage.nocaptchaai.com/api/user/get_balance
 ```
 
 #### Free Plan
@@ -34,7 +21,7 @@ https://free.nocaptchaai.com/api/user/free_balance
 
 # python requests
 import requests
-balance = requests.get('https://pro.nocaptchaai.com/api/account/balance', headers={'uid': '', 'apikey': ''})
+balance = requests.get('https://manage.nocaptchaai.com/api/user/get_balance', headers={'apikey': ''})
 
 print(balance.json())
 
@@ -44,10 +31,9 @@ print(balance.json())
 //  axios
 const  res = await axios({
   method: "get",
-  url: "https://pro.nocaptchaai.com/api/account/balance",
+  url: "https://manage.nocaptchaai.com/api/user/get_balance",
   headers: {
     "Content-type": "application/json",
-    uid: uid,
     apikey: apikey,
   }
 });
