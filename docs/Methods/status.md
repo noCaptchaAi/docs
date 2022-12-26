@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-base: `https://pro.nocaptchaai.com/api`
+base: `https://pro.nocaptchaai.com`
 
 ### `base + /status`
 
@@ -17,7 +17,7 @@ base: `https://pro.nocaptchaai.com/api`
     "id": "h-q7FBc9fXJ0V69ox4",
     "status": "new",
     "target": "airplane",
-    "url": "https://free.nocaptchaai.com/api/status?id=h-q7FBc9fXJxxxx"
+    "url": "https://free.nocaptchaai.com/status?id=h-q7FBc9fXJxxxx"
 }
 
 ```
