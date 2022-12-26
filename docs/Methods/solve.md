@@ -4,12 +4,12 @@ sidebar_position: 1
 
 #### Pro User
 ```
-https://pro.nocaptchaai.com/api/solve
+https://pro.nocaptchaai.com/solve
 ```
 
 #### Free User
 ```
-https://free.nocaptchaai.com/api/solve
+https://free.nocaptchaai.com/solve
 ```
 
 ###  `post` Solve Requests
@@ -32,7 +32,7 @@ let base64_json = {
 
 ({
   method: "post",
-  url: "https://free.nocaptchaai.com/api/solve",
+  url: "https://free.nocaptchaai.com/solve",
 
   headers: {
     "Content-type": "application/json",
