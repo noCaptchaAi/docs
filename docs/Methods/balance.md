@@ -28,7 +28,7 @@ print(balance.json())
 ```
 
 ```js
-//  axios
+//  Javascript example with axios
 const  res = await axios({
   method: "get",
   url: "https://manage.nocaptchaai.com/balance",
