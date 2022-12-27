@@ -5,8 +5,18 @@ sidebar_position: 5
 ### Each Solve Task returns an URL with task id.
 
 *** method: `Get`***
+
+# Free User
+
 ```
 "https://free.nocaptchaai.com/status?id=h-q7FBc9fXJxxxx"
+
+```
+
+# Pro User
+
+```
+"https://pro.nocaptchaai.com/status?id=h-q7FBc9fXJxxxx"
 
 ```
 
