@@ -14,13 +14,16 @@ https://free.nocaptchaai.com/solve
 
 ###  `post` Solve Requests
 
+`note: psudo code, won't work without modifications.`
+
 ```js
 let base64_json = {
    images: {
    "0": "base64 hash from image",
    "1": "base64 hash from image",
-   "...": "...", // send totatl 18 images max;
-   "18": "base64 hash from image",
+   ....
+   ....
+   "17": "base64 hash from image",
   },
   target: "Please click each image containing an airplane",
   method: "hcaptcha_base64",
