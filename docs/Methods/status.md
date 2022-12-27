@@ -2,14 +2,11 @@
 sidebar_position: 2
 ---
 
-base: `https://pro.nocaptchaai.com`
+Each Solve Task returns an URL with task id.
 
-### `base + /status`
+`Get` =>  `https://free.nocaptchaai.com/status?id=h-q7FBc9fXJxxxx`
 
-
-`/solve` requests returned with a `status` josn like below
-
-## Fetch status info with `id`
+## Returns Response like below
 
 ```json
 {
