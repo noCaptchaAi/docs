@@ -24,7 +24,7 @@ const config = {
       src: "https://papi.nocaptchaai.com/js/script.js",
       async: true,
       defer: true,
-      "data-domain": "nocaptchaai.com",
+      "data-domain": "docs.nocaptchaai.com",
     },
   ],
 
