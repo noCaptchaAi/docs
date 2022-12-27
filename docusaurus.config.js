@@ -19,6 +19,15 @@ const config = {
   organizationName: "noCaptchaAi.cpm", // Usually your GitHub org/user name.
   projectName: "noCaptchaAi Docs", // Usually your repo name.
 
+  scripts: [
+    {
+      src: "https://papi.nocaptchaai.com/js/script.js",
+      async: true,
+      defer: true,
+      "data-domain": "nocaptchaai.com",
+    },
+  ],
+
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
