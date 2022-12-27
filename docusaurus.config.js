@@ -1,59 +1,57 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require("prism-react-renderer/themes/github");
+const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tired of being told you are not human?',
-  tagline: 'noCaptchaAi gives you superVision and turns you into a human again, online!',
-  url: 'https://noCaptchaAi.com',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  title: "noCaptchaAi Developer Docs",
+  tagline: "noCaptchaAi Developer Api Docuents",
+  url: "https://noCaptchaAi.com",
+  baseUrl: "/",
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
+  favicon: "img/favicon.ico",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'noCaptchaAi', // Usually your GitHub org/user name.
-  projectName: 'noCaptchaAi Docs', // Usually your repo name.
+  organizationName: "noCaptchaAi.cpm", // Usually your GitHub org/user name.
+  projectName: "noCaptchaAi Docs", // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale:'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
     localeConfigs: {
       en: {
-        htmlLang: 'en-US',
+        htmlLang: "en-US",
       },
     },
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          routeBasePath: '/',
-          sidebarPath: require.resolve('./sidebars.js'),
+          routeBasePath: "/",
+          sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/noCaptchaAi/docs',
+          editUrl: "https://github.com/noCaptchaAi/docs",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/noCaptchaAi/blog',
+          editUrl: "https://github.com/noCaptchaAi/blog",
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve("./src/css/custom.css"),
         },
       }),
     ],
@@ -63,99 +61,70 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'noCaptchaAi',
+        title: "noCaptchaAi Docs",
         logo: {
-          alt: 'nocaptchaai.com Logo',
-          src: 'img/nocaptchaai.com.png',
+          alt: "nocaptchaai.com Logo",
+          src: "img/nocaptchaai.com.png",
         },
         items: [
           {
-            type: 'doc',
-            docId: 'Intro',
-            position: 'left',
-            label: 'Pricing',
+            href: "https://nocaptchaai.com",
+            label: "Home",
+            position: "right",
           },
           {
-            type: 'doc',
-            docId: 'userscript',
-            position: 'left',
-            label: 'Userscript',
-          },
-          {to: '/blog', label: 'news', position: 'right'},
-          {
-            href: 'https://nocaptchaai.com',
-            label: 'Home',
-            position: 'right',
+            href: "https://dash.nocaptchaai.com",
+            label: "Dashboard",
+            position: "right",
           },
           {
-            href: 'https://github.com/shimuldn/hCaptchaSolverApi',
-            label: 'Github',
-            position: 'right',
+            href: "https://github.com/shimuldn/hCaptchaSolverApi",
+            label: "Github",
+            position: "right",
           },
           {
-            href: 'https://discord.gg/E7FfzhZqzA',
-            label: 'Discord',
-            position: 'right',
+            href: "https://discord.gg/E7FfzhZqzA",
+            label: "Discord",
+            position: "right",
           },
           {
-            href: 'https://t.me/noCaptchaAi',
-            label: 'Telegram',
-            position: 'right',
+            href: "https://t.me/noCaptchaAi",
+            label: "Telegram",
+            position: "right",
           },
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'noCaptchaAi',
+            title: "noCaptchaAi",
             items: [
               {
-                label: 'Ai based captcha image detection',
-                to: '/',
+                label: "Ai based captcha image detection",
+                to: "/",
               },
             ],
           },
           {
-            title: 'Community',
+            title: "Community",
             items: [
               {
-                label: 'Discord',
-                href: 'https://discord.gg/E7FfzhZqzA',
+                label: "Discord",
+                href: "https://discord.gg/E7FfzhZqzA",
               },
               {
-                label: 'Telegram',
-                href: 'https://t.me/noCaptchaAi',
+                label: "Telegram",
+                href: "https://t.me/noCaptchaAi",
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/shimuldn/hCaptchaSolverApi',
-              }
-            ],
-          },
-          {
-            title: 'Legal & Blog',
-            items: [
-              {
-                label: 'news',
-                to: '/blog',
+                label: "GitHub",
+                href: "https://github.com/shimuldn/hCaptchaSolverApi",
               },
-              {
-                label: 'disclaimer',
-                to: '/legal/disclaimer',
-              },
-              {
-                label: 'terms',
-                to: '/legal/terms',
-              }
-              
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} noCaptchaAi.com
-
-        Does collect and store IP/country and the information you submit via form, only to serve our customers. We do not or ever will sell your information, Our promise. We do not collect personal identifiable/sensitive data.        Disclaimer:       
-        We're not responsible if someone used our service to facilitate any kind of harmful or offensive task, we have no way to know because we don't do tracking and nor wish to. Furthermore, we simply provide a service that detects images with our API. We take no responsibility for our user actions.`,
+        copyright: `Copyright @2022-${new Date().getFullYear()} noCaptchaAi.com`,
       },
       prism: {
         theme: lightCodeTheme,

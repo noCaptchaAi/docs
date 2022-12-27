@@ -1,12 +1,16 @@
 ---
-sidebar_position: 2
+sidebar_position: 5
 ---
 
-Each Solve Task returns an URL with task id.
+### Each Solve Task returns an URL with task id.
 
-`Get` =>  `https://free.nocaptchaai.com/status?id=h-q7FBc9fXJxxxx`
+*** method: `Get`***
+```
+"https://free.nocaptchaai.com/status?id=h-q7FBc9fXJxxxx"
 
-## Returns Response like below
+```
+
+## Sample Response
 
 ```json
 {
