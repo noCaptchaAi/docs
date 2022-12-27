@@ -1,1 +1,0 @@
-## [Github > puppeteer2.js](https://github.com/shimuldn/hCaptchaSolverApi/blob/main/usage_examples/puppeteer2.js)
