@@ -23,16 +23,16 @@ features:
 
   - icon: 😊
     title: Easy Peasy API
-    link: /hello.html
+    link: /en/GetStarted/quickstart.html
     details: Get started instantly with our API Examples, our pupetteer package and list of example scripts.
 
   - icon: ✔️
     title: Truly Cheapest Solvers
     details: 110000 hcapctha solves = 1$ on 99$ plans. Only provider with this much offering per dollar on subscription plans.
-    link: /hello.html
+    link: /en/GetStarted/quickstart.html
 
   - icon: ⚡
     title: Fastest Solving ~ Anywhere
     details: On average we serve results around ~ 0.02s it's just that fast. For Users, bots and use cases relying on mission critical time.
-    link: /hello.html
+    link: /en/GetStarted/quickstart.html
 ---
