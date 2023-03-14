@@ -33,7 +33,7 @@ export default defineConfig({
         items: [
           { text: "About noCaptchaAi", link: "/en/about.md" },
           { text: "QuickStart", link: "/en/GetStarted/quickstart.md" },
-          { text: "Solving Types", link: "/GetStarted/solvingtypes.md" },
+          { text: "Solving Types", link: "/en/GetStarted/solvingtypes.md" },
           { text: "DMCA & Terms", link: "/en/terms" },
         ],
       },
