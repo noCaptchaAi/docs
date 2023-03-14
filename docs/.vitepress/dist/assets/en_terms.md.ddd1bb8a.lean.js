@@ -1,0 +1,1 @@
+import{_ as e,c as t,o,Q as r}from"./chunks/framework.9ebe056a.js";const m=JSON.parse('{"title":"Terms and Conditions","description":"","frontmatter":{},"headers":[],"relativePath":"en/terms.md"}'),a={name:"en/terms.md"},n=r("",20),i=[n];function s(c,h,d,p,l,u){return o(),t("div",null,i)}const f=e(a,[["render",s]]);export{m as __pageData,f as default};
