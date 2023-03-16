@@ -4,6 +4,18 @@ export default defineConfig({
   lang: "en-US",
   title: "noCaptchaAi",
   description: "noCaptchaAi, fastest & afforadble captcha solving service",
+  head: [
+    // add plausible script
+    [
+      "script",
+      {
+        async: "",
+        defer: "",
+        "data-domain": "nocaptchaai.com",
+        src: "https://papi.nocaptchaai.com/js/script.js",
+      },
+    ],
+  ],
   themeConfig: {
     siteTitle: "noCaptchaAi",
     logo: "/og.webp",
