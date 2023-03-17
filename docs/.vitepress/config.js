@@ -11,7 +11,7 @@ export default defineConfig({
       {
         async: "",
         defer: "",
-        "data-domain": "nocaptchaai.com",
+        "data-domain": "docs.nocaptchaai.com",
         src: "https://papi.nocaptchaai.com/js/script.js",
       },
     ],
