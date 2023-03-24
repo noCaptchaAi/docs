@@ -14,9 +14,11 @@ PRO/Paid : `pro.nocaptchaai.com`
 
 ### Browser Automation Studio (BAS) Endpoints
 
-free : `pro.nocaptchaai.com/in.php`
+free : `free.nocaptchaai.com/in.php`
 
-PRO/Paid : `free.nocaptchaai.com/in.php`
+PRO/Paid : `pro.nocaptchaai.com/in.php`
+
+note: You can use "CaptchaImgClick" BAS module to use this endpoints.
 
 ---
 
