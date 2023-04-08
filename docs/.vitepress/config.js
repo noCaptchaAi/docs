@@ -41,7 +41,7 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: "Get Started",
+        text: "GET Started",
         items: [
           { text: "About noCaptchaAi", link: "/en/about.md" },
           { text: "QuickStart", link: "/en/GetStarted/quickstart.md" },
@@ -50,25 +50,40 @@ export default defineConfig({
         ],
       },
       {
-        text: "API SDK",
+        text: "API BASICS",
         items: [
           { text: "Basics", link: "/en/api/basics.md" },
-          { text: "in.php", link: "/en/api/in.php.md" },
-          { text: "getBalance", link: "/en/api/getBalance.md" },
-          { text: "Languages", link: "/en/api/lang.md" },
+          { text: "IN.php (2Captcha Like)", link: "/en/api/in.php.md" },
+          // { text: "Languages", link: "/en/api/lang.md" },
+          { text: "Account Balance", link: "/en/account/getBalance.md" },
+        ],
+      },
+     
+      {
+        text: "🖼️ IMAGE Task",
+        items: [
+          { text: "Prepare Payload", link: "/en/image/PrepareData.md" },
+          { text: "hCaptcha Image ", link: "/en/image/hCaptcha.md" },
+          { text: "reCaptcha v2 Image (WIP)", link: "/en/image/reCaptcha.md" },
         ],
       },
       {
-        text: "Image TASK",
+        text: "🔑 TOKEN Task",
         items: [
-          { text: "Prepare Data", link: "/en/imageTasks/PrepareData.md" },
-          { text: "postSolveTask", link: "/en/imageTasks/postSolveTask.md" },
-          { text: "getSolveStatus", link: "/en/imageTasks/getSolveStatus.md" },
+          { text: "hCaptcha Normal", link: "/en/token/hCaptcha.md" },
         ],
       },
+      {
+        text: "🔤 OCR and Audio Task",
+        items: [
+          { text: "ProBot OCR", link: "/en/other/probot.md" },
+          { text: "ReCaptcha v2 Audio", link: "/en/other/rcaudio.md" }
+        ],
+      },
+      
 
       {
-        text: "Our Software",
+        text: "📚 SOFTWARE LIBRARY",
         items: [
           { text: "Software List", link: "en/api/basics.html#software-sdk" },
           { text: "Chrome Extension", link: "https://nocaptchaai.com/chrome" },

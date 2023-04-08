@@ -1,19 +1,23 @@
 ---
-title: Send Solve Task
+title: Send hCaptcha Image Task
 lang: en-US
 ---
 
-# Send Solve Task `POST`
+# Send hCaptcha Image Task `POST`
 
-This method sends a solve task to the api server.
+`Normal` / `Enterprise`
+
+`COST: 1 request each 3x3 = 9 images`
 
 ::: tip
 
-Visit [dash](./PrepareData) prepare payload data for sending `Solve Task`.
+Visit [`Prepare reCaptcha Data`](./PrepareData) prepare payload data for sending
 
 :::
 
-## Send Task CODE DEMO
+
+
+## Send hCaptcha Task 
 
 ::: code-group
 
@@ -453,7 +457,6 @@ int main() {
   "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
   "site": "nocaptchaai.com",
   "ln": "en",
-  "softid": "UserScript3.7.0"
 }
 ```
 

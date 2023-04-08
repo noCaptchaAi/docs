@@ -7,9 +7,9 @@ lang: en-US
 
 This method returns the balance of the account.
 
-### pro = `https://manage.nocaptchaai.com/balance`
+pro = `https://manage.nocaptchaai.com/balance`
 
-### free = `https://free.nocaptchaai.com/balance`
+free = `https://free.nocaptchaai.com/balance`
 
 ::: tip
 // currently optional

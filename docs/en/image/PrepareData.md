@@ -3,11 +3,10 @@ title: Image Recognition
 lang: en-US
 ---
 
-# Prepare `postSolveTask` data
+# Prepare hCaptcha `postSolveTask` data
 
 ---
 
-Helper to prepare data for [`postSolveTask`](./postSolveTask) method.
 
 | Required    | Method      | Description                                                                        |
 | ----------- | ----------- | ---------------------------------------------------------------------------------- |
