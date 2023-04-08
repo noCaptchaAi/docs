@@ -5,7 +5,6 @@ lang: en-US
 
 # `GET` Solve Status
 
-This method returns the status of the solve task after the [postSolveTask](./postSolveTask) has been submitted.
 
 ## From `postSolveTask` response
 
