@@ -5,8 +5,6 @@ lang: en-US
 
 # Send reCaptcha v2 image Task `POST`
 
-
-
 This method sends a reCaptcha image solve task to the api server.
 
 `COST: FREE BETA`

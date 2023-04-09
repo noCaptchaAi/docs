@@ -1,5 +1,5 @@
 ---
-title: Send Solve Task
+title: Send hCaptcha Token Task
 lang: en-US
 ---
 
@@ -7,7 +7,7 @@ lang: en-US
 
 This method sends a Token task to the api server.
 
-`COST: 5 Requests per Audio to Text`
+`COST: 5 Requests per Task`
 
 ::: tip
 Currently supports only normal hCaptcha. Enterprise Support in progress.

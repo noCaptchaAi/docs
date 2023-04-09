@@ -15,6 +15,14 @@ Visit [`Prepare reCaptcha Data`](./PrepareData) prepare payload data for sending
 
 :::
 
+```
+ // NEW TYPES of hCapctha
+    type: "grid", // "bbox" and "multi"  
+
+"grid" = 3x3 grid
+"bbox" = point and click and draw rectangle, rectangle wheel/others
+"multi" = multi select, accurate descriptions
+```
 
 
 ## Send hCaptcha Task 
@@ -31,6 +39,8 @@ const images = {
 const base64_json = {
     images,
     target: "Please click each image containing a basketball",
+    // NEW
+    type: "grid", // "bbox" and "multi"    
     method: "hcaptcha_base64", // method name
     sitekey: "xx-xx-xx-xx", // eg. b17a7-90bf-4070-9296-62679 from html page
     site: "domain.com", // url of the captcha page
@@ -453,7 +463,35 @@ int main() {
     "8": "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"
   },
   "target": "Please click each image containing a basketball",
+  "type": "grid",
   "method": "hcaptcha_base64",
+  "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
+  "site": "nocaptchaai.com",
+  "ln": "en",
+}
+```
+
+```json
+{
+  "images": {
+    "0": "/9j/AQSkZJRgABAQAAAQABAA..."
+    }
+  "target": "Please click center of owl's head",
+  "method": "hcaptcha_base64",
+  "type": "bbox"
+  "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
+  "site": "nocaptchaai.com",
+  "ln": "en",
+}
+```
+```json
+{
+  "images": {
+    "0": "/9j/AQSkZJRgABAQAAAQABAA..."
+    }
+  "target": "Please click the Acccurate description of the image",
+  "method": "hcaptcha_base64",
+  "type": "multi"
   "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
   "site": "nocaptchaai.com",
   "ln": "en",
@@ -472,3 +510,6 @@ int main() {
   "url": "https://pro.nocaptchaai.com/status?id=h-ZEQEvJzqtCTuSQak"
 }
 ```
+
+
+.. updating soon
