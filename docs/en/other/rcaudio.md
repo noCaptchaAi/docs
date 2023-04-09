@@ -19,7 +19,7 @@ headers:
 
 ```
 
-## Send Audio Task - PROBOT
+## Send Audio Task
 
 ::: code-group
 
