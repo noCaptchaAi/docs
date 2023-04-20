@@ -6,6 +6,8 @@ lang: en-US
 # Send Probot OCR Task `POST`
 
 This method sends a solve task to the api server.
+ProBot ✨
+
 
 `COST: 1 Requests per Image to Text`
 

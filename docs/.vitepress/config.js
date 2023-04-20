@@ -74,10 +74,17 @@ export default defineConfig({
         ],
       },
       {
-        text: "🔤 OCR and Audio Task",
+        text: "OCR Task",
         items: [
-          { text: "ProBot OCR", link: "/en/other/probot.md" },
-          { text: "ReCaptcha v2 Audio", link: "/en/other/rcaudio.md" }
+          { text: "OCR Variants", link: "/en/ocr/ocr.md" },
+          { text: "ProBot", link: "/en/ocr/probot.md" },
+        ],
+      },
+      {
+        text: "🔤 Audio Task",
+        items: [
+        
+          { text: "ReCaptcha v2 Audio", link: "/en/audio/rcaudio.md" }
         ],
       },
       
