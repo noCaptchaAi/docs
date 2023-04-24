@@ -19,4 +19,5 @@ lang: en-US
 | `Required ` | `ln`        | language of captcha frame/target                                                   |
 
 ![api info](/prepare.png)
+![api info](/s.webp)
 ![api info](/sitekey.png)
