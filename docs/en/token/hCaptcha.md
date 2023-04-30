@@ -39,7 +39,7 @@ const payload = {
         "type": "https" // string "http", "socks5", "socks4" 
     },
     rqdata: "eyJ0zI1NiJ9.eyJmIjowLCJ....", // long string
-    type:"hcaptcha",
+    type: "hcaptcha",
     sitekey: searchParams.get("sitekey"), // eg. b17a7-90bf-4070-9296-62679, use searchparams
     // useragent depending on your use case
     useragent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'; // demo
@@ -49,7 +49,7 @@ const request = await fetch(tokenapi, {
     method: "post",
     headers,
     body: JSON.stringify(payload),
-  }).then((response) => {
+}).then((response) => {
     const res = response.json();
     console.log(res.status); // processing or failed 
     console.log(res.url); // task status url
