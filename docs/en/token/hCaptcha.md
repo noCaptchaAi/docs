@@ -31,7 +31,13 @@ const apikey = "apikey";
 const tokenapi = "https://token.nocaptchaai.com/token";
 const payload = {
     url: searchParams.get("host"); // domain.com of target site
-    proxy: {},
+    proxy: {
+        "ip": "123.45.678.9", // string
+        "port": 1234, // int
+        "username": "userid", // string
+        "password": "pass#=#rd", // string
+        "type": "https" // string "http", "socks5", "socks4" 
+    },
     rqdata: "eyJ0zI1NiJ9.eyJmIjowLCJ....", // long string
     type:"hcaptcha",
     sitekey: searchParams.get("sitekey"), // eg. b17a7-90bf-4070-9296-62679, use searchparams
@@ -67,7 +73,13 @@ apikey = "apikey"
 token_api = "https://token.nocaptchaai.com/token"
 payload = {
     "url": search_params.get("host")[0],  # domain.com of target site
-    "proxy": {},
+    "proxy": {
+        "ip": "123.45.678.9", // string
+        "port": 1234, // int
+        "username": "userid", // string
+        "password": "pass#=#rd", // string
+        "type": "https" // string "http", "socks5", "socks4" 
+    },
     "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",  # long string
     "type": "hcaptcha",
     "sitekey": search_params.get("sitekey")[0],  # eg. b17a7-90bf-4070-9296-62679, use searchparams
@@ -173,7 +185,13 @@ async function sendReq(rq) {
                     sitekey: searchParams.get("sitekey"),
                     url: searchParams.get("host"),
                     type: "hcaptcha",
-                    proxy: {},
+                     proxy: {
+                        "ip": "123.45.678.9", // string
+                        "port": 1234, // int
+                        "username": "userid", // string
+                        "password": "pass#=#rd", // string
+                        "type": "https" // string "http", "socks5", "socks4" 
+                    },
                     rqdata: rq,
                     useragent: navigator.userAgent,
                 }),
@@ -205,7 +223,13 @@ async def send_req(rq):
         "sitekey": search_params.get("sitekey")[0],
         "url": search_params.get("host")[0],
         "type": "hcaptcha",
-        "proxy": {},
+        "proxy": {
+            "ip": "123.45.678.9", // string
+            "port": 1234, // int
+            "username": "userid", // string
+            "password": "pass#=#rd", // string
+            "type": "https" // string "http", "socks5", "socks4" 
+        },
         "rqdata": rq,
         "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"  # Replace with user agent string
     }
@@ -228,7 +252,13 @@ pSeudo
 
 {
     "url": "domain.com",
-    "proxy": {},
+    "proxy": {
+        "ip": "123.45.678.9", // string
+        "port": 1234, // int
+        "username": "userid", // string
+        "password": "pass#=#rd", // string
+        "type": "https" // string "http", "socks5", "socks4" 
+    },
     "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",
     "type":"hcaptcha",
     "sitekey": "b17a7-90bf-4070-9296-62679",
@@ -241,7 +271,13 @@ Real
     "sitekey": "a5f74b19-9e45-40e0-b45d-47ff91b7a6c2",
     "url": "accounts.hcaptcha.com",
     "type": "hcaptcha",
-    "proxy": {},
+    "proxy": {
+        "ip": "123.45.678.9", // string
+        "port": 1234, // int
+        "username": "userid", // string
+        "password": "pass#=#rd", // string
+        "type": "https" // string "http", "socks5", "socks4" 
+    },
     "rqdata": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmIjowLCJzIjoyLCJ0IjoidyIsImQiOiIwSlMzTWZDY2ttYlo5OE1DQmtzUi8ybWlYYnJzZldsK1hvbW9IMmNJWlNtWGdESndCdUx1NkE3djJEYzZCRzJSRWtIMjRKYlpRMFhuanc5NXVwRWdrN2NTaU1veDNnSzZFNnFCTnl4dXhVdmFTOVdRZkFmaHJ1ZWw0ZUFYK1ptbGh2WHlCUGQ0dTJ4MXZlKzRndFJqRGZiQU5Zd1Ywc2taaGd5OWtCa05wdHRqSDhvcWE5WFZoZm1Sbnc9PXZkR0JIOWEycVZaOU9VQVQiLCJsIjoiaHR0cHM6Ly9uZXdhc3NldHMuaGNhcHRjaGEuY29tL2MvNmZkZDJmMyIsImUiOjE2ODA5OTI2ODUsIm4iOiJoc3ciLCJjIjoxMDAwfQ.Lfp5o-dIBYCUpKTG13XqcyF3vXGmcOaJ1dOF5cl5bmA",
     "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 }
