@@ -60,13 +60,12 @@ const request = await fetch(tokenapi, {
 
 ```Python
 
-import requests
-import time
-from urllib.parse import urlparse, parse_qs
+import requests, time
 
 apikey = "apikey"  # https://dash.nocaptchaai.com
 token_api = "https://token.nocaptchaai.com/token"
 
+headers = {"Content-Type": "application/json", "apikey": apikey}
 payload = {
     "proxy": {
         "ip": "123.45.678.9",
@@ -82,11 +81,9 @@ payload = {
     "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 }
 
-headers = {"Content-Type": "application/json", "apikey": apikey}
-
 response = requests.post(token_api, json=payload, headers=headers)
-startTime = time.time()
 response_json = response.json()
+startTime = time.time()
 
 print("task status: ", response_json)
 print("waiting 7sec for response...")
