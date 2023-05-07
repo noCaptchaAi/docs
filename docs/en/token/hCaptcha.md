@@ -59,19 +59,16 @@ const request = await fetch(tokenapi, {
 ```
 
 ```Python
+
 import requests
 import time
 from urllib.parse import urlparse, parse_qs
 
-# Assuming you have location_hash like in the original JS code
-location_hash = "#host=accounts.hcaptcha.com&sitekey=7830874c-13ad-4cfe-98d7-e8b019dc1742"
-search_params = parse_qs(urlparse(location_hash).fragment)
-apikey = "your apikey"  # https://dash.nocaptchaai.com
+apikey = "apikey"  # https://dash.nocaptchaai.com
 token_api = "https://token.nocaptchaai.com/token"
 
 payload = {
-    "url": search_params.get("host")[0],
-    "1": {
+    "proxy": {
         "ip": "123.45.678.9",
         "port": 1234,
         "username": "userid",
@@ -80,8 +77,8 @@ payload = {
     },
     "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",
     "type": "hcaptcha",
-    "url": search_params.get("host")[0],
-    "sitekey": search_params.get("sitekey")[0],
+    "url": "accounts.hcaptcha.com",
+    "sitekey": "7830874c-13ad-4cfe-98d7-e8b019dc1742",
     "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 }
 
@@ -91,17 +88,17 @@ response = requests.post(token_api, json=payload, headers=headers)
 startTime = time.time()
 response_json = response.json()
 
-print("sitekey: " + search_params.get("sitekey")
-      [0], "url: " + search_params.get("host")[0], "\ntask status: ", response_json)
-
+print("task status: ", response_json)
 print("waiting 7sec for response...")
 time.sleep(7)
+
 while True:
     sts = requests.get(response_json["url"], headers=headers).json()
     if sts["status"] == "processed" or sts["status"] == "failed":
         print(f'time since request:- {int(time.time() - startTime)} seconds')
         print(f'status: {sts["status"]}\n{sts["token"]}')
         break
+
     print("status: ", sts["status"])
     time.sleep(2)
 
