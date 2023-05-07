@@ -59,41 +59,51 @@ const request = await fetch(tokenapi, {
 ```
 
 ```Python
-
-Required: `pip install requests`
-
 import requests
+import time
 from urllib.parse import urlparse, parse_qs
 
 # Assuming you have location_hash like in the original JS code
-location_hash = "#host=domain.com&sitekey=b17a7-90bf-4070-9296-62679"
-
+location_hash = "#host=accounts.hcaptcha.com&sitekey=7830874c-13ad-4cfe-98d7-e8b019dc1742"
 search_params = parse_qs(urlparse(location_hash).fragment)
-apikey = "apikey"
+apikey = "your apikey"  # https://dash.nocaptchaai.com
 token_api = "https://token.nocaptchaai.com/token"
+
 payload = {
-    "url": search_params.get("host")[0],  # domain.com of target site
-    "proxy": {
-        "ip": "123.45.678.9", // string
-        "port": 1234, // int
-        "username": "userid", // string
-        "password": "pass#=#rd", // string
-        "type": "https" // string "http", "socks5", "socks4" 
+    "url": search_params.get("host")[0],
+    "1": {
+        "ip": "123.45.678.9",
+        "port": 1234,
+        "username": "userid",
+        "password": "pass#=#rd",
+        "type": "https"
     },
-    "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",  # long string
+    "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",
     "type": "hcaptcha",
-    "sitekey": search_params.get("sitekey")[0],  # eg. b17a7-90bf-4070-9296-62679, use searchparams
-    "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"  # demo
+    "url": search_params.get("host")[0],
+    "sitekey": search_params.get("sitekey")[0],
+    "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 }
 
-headers = {"Content-Type": "application/json"}
+headers = {"Content-Type": "application/json", "apikey": apikey}
 
 response = requests.post(token_api, json=payload, headers=headers)
+startTime = time.time()
 response_json = response.json()
 
-print(response_json["status"])  # processing or failed
-print(response_json["url"])  # task status url
+print("sitekey: " + search_params.get("sitekey")
+      [0], "url: " + search_params.get("host")[0], "\ntask status: ", response_json)
 
+print("waiting 7sec for response...")
+time.sleep(7)
+while True:
+    sts = requests.get(response_json["url"], headers=headers).json()
+    if sts["status"] == "processed" or sts["status"] == "failed":
+        print(f'time since request:- {int(time.time() - startTime)} seconds')
+        print(f'status: {sts["status"]}\n{sts["token"]}')
+        break
+    print("status: ", sts["status"])
+    time.sleep(2)
 
 ```
 
