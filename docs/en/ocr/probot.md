@@ -54,17 +54,25 @@ console.log(data);
 ```
 
 ```Python
-import requests
+import requests, base64
+from PIL import Image
+from io import BytesIO
 
 payload = {
     "method": "ocr",
-    "image": "base64 hash of image"
+    "image": image_to_base64("https://example.com/image.png")
 }
 
 headers = {
     "Content-Type": "application/json",
     "apikey": "apikey"
 }
+def image_to_base64(image_url):
+    response = requests.get(image_url)
+    img = Image.open(BytesIO(response.content))
+    img_buffer = BytesIO()
+    img.save(img_buffer, format='PNG')
+    return base64.b64encode(img_buffer.getvalue()).decode('utf-8')
 
 def send_request():
     try:
