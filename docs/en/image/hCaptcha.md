@@ -11,7 +11,7 @@ lang: en-US
 
 ::: tip
 
-Visit [`Prepare reCaptcha Data`](./PrepareData) prepare payload data for sending
+Visit [`Prepare hCaptcha Data`](./PrepareData) prepare payload data for sending
 
 ![api info](/s.webp)
 :::

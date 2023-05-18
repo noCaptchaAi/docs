@@ -11,7 +11,7 @@ This method sends a reCaptcha image solve task to the api server.
 
 ::: warning
 #### WORK IN PROGRESS
-Visit [`Prepare reCaptcha Data`](./PrepareData) prepare payload data for sending
+Visit [`Prepare Captcha Data`](./PrepareData) prepare payload data for sending
 
 :::
 
