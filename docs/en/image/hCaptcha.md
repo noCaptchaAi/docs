@@ -6,7 +6,9 @@ lang: en-US
 # Send hCaptcha Image Task `POST`
 
 `Normal` / `Enterprise`
+
 `Pricing: 7000 Requests/ 1$`
+
 `COST: 1 request each 3x3 = 9 images`
 
 ::: tip
