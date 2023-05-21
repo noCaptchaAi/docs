@@ -5,8 +5,8 @@ lang: en-US
 
 # ReCaptcha Audio to Text Task `POST`
 
-
-`COST: 3 Requests per Audio to Text`
+`Pricing: 3500 Requests/ 1$`
+`Per Audio to Text COST: 2 Requests `
 
 
 ```
