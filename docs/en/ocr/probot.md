@@ -8,7 +8,7 @@ lang: en-US
 This method sends a solve task to the api server.
 ProBot ✨
 
-
+`Pricing: 7000 Requests/ 1$`
 `COST: 1 Requests per Image to Text`
 
 ::: tip
