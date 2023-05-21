@@ -24,67 +24,6 @@ headers:
 
 ::: code-group
 
-```JavaScript
-
-const searchParams = new URLSearchParams(location.hash);
-const apikey = "apikey";
-const tokenapi = "https://token.nocaptchaai.com/token";
-const payload = {
-    url: searchParams.get("host"); // domain.com of target site
-    proxy: {
-        "ip": "123.45.678.9", // string
-        "port": 1234, // int
-        "username": "userid", // string
-        "password": "pass#=#rd", // string
-        "type": "https" // string "http", "socks5", "socks4" 
-    },
-    rqdata: "eyJ0zI1NiJ9.eyJmIjowLCJ....", // long string
-    type: "hcaptcha",
-    sitekey: searchParams.get("sitekey"), // eg. b17a7-90bf-4070-9296-62679, use searchparams
-    // useragent depending on your use case
-    useragent: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36'; // demo
-}
-
-const request = await fetch(tokenapi, {
-    method: "post",
-    headers,
-    body: JSON.stringify(payload),
-}).then((response) => {
-    const res = response.json();
-    console.log(res.status); // processing or failed 
-    console.log(res.url); // task status url
-});
-
-
-```
-```nodeJS
-const axios = require('axios');
-
-(async () => {
-    const apikey = 'apikey';
-    const payload = { /* Your payload object here */ };
-    const headers = { 'Content-Type': 'application/json', 'apikey': apikey };
-    const response = await axios.post('https://token.nocaptchaai.com/token', payload, { headers });
-
-    console.log("task status: ", response.data);
-    console.log("waiting 7sec for response...");
-    await new Promise(resolve => setTimeout(resolve, 7000));
-
-    while (true) {
-        const sts = await axios.get(response.data.url, { headers });
-        if (sts.data.status === "processed" || sts.data.status === "failed") {
-            console.log(`time since request: ${((new Date()) - startTime) / 1000} seconds`);
-            console.log(`status: ${sts.data.status}\n${sts.data.token}`);
-            break;
-        }
-
-        console.log("status: ", sts.data.status);
-        await new Promise(resolve => setTimeout(resolve, 2000));
-    }
-})();
-
-```
-
 ```Python
 
 import requests, time
@@ -125,6 +64,61 @@ while True:
 
     print("status: ", sts["status"])
     time.sleep(2)
+
+```
+
+```JS
+const useragent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36';
+const tokenapi = "https://token.nocaptchaai.com/token";
+const payload = {
+    url: "domain.com",
+    proxy: {
+        "ip": "123.45.678.9",
+        "port": 1234,
+        "username": "userid",
+        "password": "pass#=#rd",
+        "type": "https" // string "http", "socks5", "socks4" 
+    },
+    rqdata: "eyJ0zI1NiJ9.eyJmIjowLCJ....",
+    type: "hcaptcha",
+    sitekey: " b17a7-90bf-4070-9296-62679",
+    useragent
+}
+
+const request = await fetch(tokenapi, {
+    method: "post",
+    headers,
+    body: JSON.stringify(payload),
+}).then((response) => {
+    const res = response.json();
+    console.log(res.status, res.url);
+});
+```
+```nodeJS
+const axios = require('axios');
+
+(async () => {
+    const apikey = 'apikey';
+    const payload = { /* Your payload object here */ };
+    const headers = { 'Content-Type': 'application/json', 'apikey': apikey };
+    const response = await axios.post('https://token.nocaptchaai.com/token', payload, { headers });
+
+    console.log("task status: ", response.data);
+    console.log("waiting 7sec for response...");
+    await new Promise(resolve => setTimeout(resolve, 7000));
+
+    while (true) {
+        const sts = await axios.get(response.data.url, { headers });
+        if (sts.data.status === "processed" || sts.data.status === "failed") {
+            console.log(`time since request: ${((new Date()) - startTime) / 1000} seconds`);
+            console.log(`status: ${sts.data.status}\n${sts.data.token}`);
+            break;
+        }
+
+        console.log("status: ", sts.data.status);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+})();
 
 ```
 
@@ -389,7 +383,7 @@ class Program
 }
 
 ```
-```node-Puppeteer
+```Puppeteer
 const puppeteer = require('puppeteer');
 const axios = require('axios');
 
@@ -418,7 +412,7 @@ const axios = require('axios');
 
 ```
 
-```node-playwright
+```playwright
 const { chromium } = require('playwright');
 const axios = require('axios');
 
@@ -446,7 +440,7 @@ const axios = require('axios');
 })();
 
 ```
-```node-selenium
+```selenium
 const { Builder } = require('selenium-webdriver');
 const axios = require('axios');
 
