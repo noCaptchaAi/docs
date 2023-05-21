@@ -5,6 +5,7 @@ lang: en-US
 
 # Supported OCR Types
 
+`Pricing: 7000 Requests/ 1$`
 
 ### Send task
 ```javascript
