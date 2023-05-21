@@ -87,12 +87,16 @@ const payload = {
 
 const request = await fetch(tokenapi, {
     method: "post",
-    headers,
+    headers: {
+        "Content-Type": "application/json",
+        "apikey": apikey
+    },
     body: JSON.stringify(payload),
-}).then((response) => {
-    const res = response.json();
-    console.log(res.status, res.url);
-});
+}).then((response) => response.json())
+    .then((res) => {
+        console.log(res.status, res.url);
+    });
+
 ```
 ```nodeJS
 const axios = require('axios');
