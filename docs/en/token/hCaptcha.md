@@ -57,6 +57,33 @@ const request = await fetch(tokenapi, {
 
 
 ```
+```nodeJS
+const axios = require('axios');
+
+(async () => {
+    const apikey = 'apikey';
+    const payload = { /* Your payload object here */ };
+    const headers = { 'Content-Type': 'application/json', 'apikey': apikey };
+    const response = await axios.post('https://token.nocaptchaai.com/token', payload, { headers });
+
+    console.log("task status: ", response.data);
+    console.log("waiting 7sec for response...");
+    await new Promise(resolve => setTimeout(resolve, 7000));
+
+    while (true) {
+        const sts = await axios.get(response.data.url, { headers });
+        if (sts.data.status === "processed" || sts.data.status === "failed") {
+            console.log(`time since request: ${((new Date()) - startTime) / 1000} seconds`);
+            console.log(`status: ${sts.data.status}\n${sts.data.token}`);
+            break;
+        }
+
+        console.log("status: ", sts.data.status);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+})();
+
+```
 
 ```Python
 
@@ -155,6 +182,298 @@ while (true) {
 
 ```
 
+```rust
+
+use std::time::{SystemTime, Duration};
+use std::thread;
+use reqwest::header::CONTENT_TYPE;
+use serde_json::json;
+
+#[tokio::main]
+async fn main() -> Result<(), Box<dyn std::error::Error>> {
+    let client = reqwest::Client::new();
+    let start = SystemTime::now();
+    let payload = json!({
+        "proxy": {
+            "ip": "123.45.678.9",
+            "port": 1234,
+            "username": "userid",
+            "password": "pass#=#rd",
+            "type": "https"
+        },
+        "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",
+        "type": "hcaptcha",
+        "url": "accounts.hcaptcha.com",
+        "sitekey": "7830874c-13ad-4cfe-98d7-e8b019dc1742",
+        "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+    });
+    let res = client.post("https://token.nocaptchaai.com/token")
+        .header(CONTENT_TYPE, "application/json")
+        .bearer_auth("apikey")
+        .json(&payload)
+        .send()
+        .await?;
+
+    let task: serde_json::Value = res.json().await?;
+    println!("task status: {:?}", task);
+    println!("waiting 7sec for response...");
+    thread::sleep(Duration::from_secs(7));
+
+    loop {
+        let sts = client.get(task["url"].as_str().unwrap())
+            .header(CONTENT_TYPE, "application/json")
+            .bearer_auth("apikey")
+            .send()
+            .await?;
+
+        let sts_json: serde_json::Value = sts.json().await?;
+        let elapsed = start.elapsed()?.as_secs();
+        if sts_json["status"] == "processed" || sts_json["status"] == "failed" {
+            println!("time since request:- {} seconds", elapsed);
+            println!("status: {}\n{}", sts_json["status"], sts_json["token"]);
+            break;
+        }
+        println!("status: {}", sts_json["status"]);
+        thread::sleep(Duration::from_secs(2));
+    }
+    Ok(())
+}
+
+```
+
+```go
+package main
+
+import (
+	"bytes"
+	"encoding/json"
+	"fmt"
+	"io/ioutil"
+	"net/http"
+	"time"
+)
+
+type Payload struct {
+	Proxy     map[string]interface{} `json:"proxy"`
+	Rqdata    string                 `json:"rqdata"`
+	Type      string                 `json:"type"`
+	URL       string                 `json:"url"`
+	Sitekey   string                 `json:"sitekey"`
+	Useragent string                 `json:"useragent"`
+}
+
+func main() {
+	httpClient := &http.Client{}
+	startTime := time.Now()
+
+	data := &Payload{
+		Proxy: map[string]interface{}{
+			"ip":       "123.45.678.9",
+			"port":     1234,
+			"username": "userid",
+			"password": "pass#=#rd",
+			"type":     "https",
+		},
+		Rqdata:    "eyJ0zI1NiJ9.eyJmIjowLCJ....",
+		Type:      "hcaptcha",
+		URL:       "accounts.hcaptcha.com",
+		Sitekey:   "7830874c-13ad-4cfe-98d7-e8b019dc1742",
+		Useragent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36",
+	}
+
+	payload, _ := json.Marshal(data)
+	req, _ := http.NewRequest(http.MethodPost, "https://token.nocaptchaai.com/token", bytes.NewBuffer(payload))
+	req.Header.Set("Content-Type", "application/json")
+	req.Header.Set("apikey", "apikey")
+
+	res, _ := httpClient.Do(req)
+	defer res.Body.Close()
+
+	body, _ := ioutil.ReadAll(res.Body)
+	var response map[string]interface{}
+	json.Unmarshal(body, &response)
+	fmt.Println("task status: ", response)
+
+	fmt.Println("waiting 7sec for response...")
+	time.Sleep(7 * time.Second)
+
+	for {
+		req, _ = http.NewRequest(http.MethodGet, response["url"].(string), nil)
+		req.Header.Set("Content-Type", "application/json")
+		req.Header.Set("apikey", "apikey")
+
+		res, _ = httpClient.Do(req)
+		defer res.Body.Close()
+
+		body, _ = ioutil.ReadAll(res.Body)
+		var sts map[string]interface{}
+		json.Unmarshal(body, &sts)
+
+		if sts["status"] == "processed" || sts["status"] == "failed" {
+			elapsed := time.Since(startTime)
+			fmt.Printf("time since request:- %d seconds\n", int(elapsed.Seconds()))
+			fmt.Printf("status: %s\n%s\n", sts["status"], sts["token"])
+			break
+		}
+
+		fmt.Println("status: ", sts["status"])
+		time.Sleep(2 * time.Second)
+	}
+}
+
+```
+```c#
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+
+class Program
+{
+    static readonly HttpClient client = new HttpClient();
+    static void Main()
+    {
+        MainAsync().GetAwaiter().GetResult();
+    }
+
+    static async Task MainAsync()
+    {
+        var startTime = DateTime.Now;
+
+        var payload = new
+        {
+            proxy = new
+            {
+                ip = "123.45.678.9",
+                port = 1234,
+                username = "userid",
+                password = "pass#=#rd",
+                type = "https"
+            },
+            rqdata = "eyJ0zI1NiJ9.eyJmIjowLCJ....",
+            type = "hcaptcha",
+            url = "accounts.hcaptcha.com",
+            sitekey = "7830874c-13ad-4cfe-98d7-e8b019dc1742",
+            useragent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+        };
+
+        var jsonPayload = JsonConvert.SerializeObject(payload);
+        var httpContent = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+        client.DefaultRequestHeaders.Add("apikey", "apikey");
+        var response = await client.PostAsync("https://token.nocaptchaai.com/token", httpContent);
+
+        var responseJson = JsonConvert.DeserializeObject<dynamic>(await response.Content.ReadAsStringAsync());
+        Console.WriteLine($"task status: {responseJson}");
+        Console.WriteLine("waiting 7sec for response...");
+        Thread.Sleep(7000);
+
+        while (true)
+        {
+            var stsResponse = await client.GetAsync(responseJson.url.ToString());
+            var stsJson = JsonConvert.DeserializeObject<dynamic>(await stsResponse.Content.ReadAsStringAsync());
+            var elapsed = (DateTime.Now - startTime).TotalSeconds;
+
+            if (stsJson.status == "processed" || stsJson.status == "failed")
+            {
+                Console.WriteLine($"time since request:- {elapsed} seconds");
+                Console.WriteLine($"status: {stsJson.status}\n{stsJson.token}");
+                break;
+            }
+
+            Console.WriteLine($"status: {stsJson.status}");
+            Thread.Sleep(2000);
+        }
+    }
+}
+
+```
+```node-Puppeteer
+const puppeteer = require('puppeteer');
+const axios = require('axios');
+
+(async () => {
+    const apikey = 'apikey';
+    const payload = { /* Your payload object here */ };
+    const headers = { 'Content-Type': 'application/json', 'apikey': apikey };
+    const response = await axios.post('https://token.nocaptchaai.com/token', payload, { headers });
+
+    console.log("task status: ", response.data);
+    console.log("waiting 7sec for response...");
+    await new Promise(resolve => setTimeout(resolve, 7000));
+
+    while (true) {
+        const sts = await axios.get(response.data.url, { headers });
+        if (sts.data.status === "processed" || sts.data.status === "failed") {
+            console.log(`time since request: ${((new Date()) - startTime) / 1000} seconds`);
+            console.log(`status: ${sts.data.status}\n${sts.data.token}`);
+            break;
+        }
+
+        console.log("status: ", sts.data.status);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+})();
+
+```
+
+```node-playwright
+const { chromium } = require('playwright');
+const axios = require('axios');
+
+(async () => {
+    const apikey = 'apikey';
+    const payload = { /* Your payload object here */ };
+    const headers = { 'Content-Type': 'application/json', 'apikey': apikey };
+    const response = await axios.post('https://token.nocaptchaai.com/token', payload, { headers });
+
+    console.log("task status: ", response.data);
+    console.log("waiting 7sec for response...");
+    await new Promise(resolve => setTimeout(resolve, 7000));
+
+    while (true) {
+        const sts = await axios.get(response.data.url, { headers });
+        if (sts.data.status === "processed" || sts.data.status === "failed") {
+            console.log(`time since request: ${((new Date()) - startTime) / 1000} seconds`);
+            console.log(`status: ${sts.data.status}\n${sts.data.token}`);
+            break;
+        }
+
+        console.log("status: ", sts.data.status);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+})();
+
+```
+```node-selenium
+const { Builder } = require('selenium-webdriver');
+const axios = require('axios');
+
+(async () => {
+    const apikey = 'apikey';
+    const payload = { /* Your payload object here */ };
+    const headers = { 'Content-Type': 'application/json', 'apikey': apikey };
+    const response = await axios.post('https://token.nocaptchaai.com/token', payload, { headers });
+
+    console.log("task status: ", response.data);
+    console.log("waiting 7sec for response...");
+    await new Promise(resolve => setTimeout(resolve, 7000));
+
+    while (true) {
+        const sts = await axios.get(response.data.url, { headers });
+        if (sts.data.status === "processed" || sts.data.status === "failed") {
+            console.log(`time since request: ${((new Date()) - startTime) / 1000} seconds`);
+            console.log(`status: ${sts.data.status}\n${sts.data.token}`);
+            break;
+        }
+
+        console.log("status: ", sts.data.status);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+    }
+})();
+
+```
 
 :::
 
