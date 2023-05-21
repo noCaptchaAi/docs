@@ -26,20 +26,15 @@ headers:
 
 ```Python
 
-import requests, time
+import requests
+import time
 
-apikey = "apikey"  # https://dash.nocaptchaai.com
+apikey = "apikey"
 token_api = "https://token.nocaptchaai.com/token"
 
 headers = {"Content-Type": "application/json", "apikey": apikey}
 payload = {
-    "proxy": {
-        "ip": "123.45.678.9",
-        "port": 1234,
-        "username": "userid",
-        "password": "pass#=#rd",
-        "type": "https"
-    },
+    "proxy": {"ip": "123.45.678.9", "port": 1234, "username": "userid", "password": "pass#=#rd", "type": "https"},
     "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",
     "type": "hcaptcha",
     "url": "accounts.hcaptcha.com",
@@ -47,23 +42,23 @@ payload = {
     "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
 }
 
-response = requests.post(token_api, json=payload, headers=headers)
-response_json = response.json()
-startTime = time.time()
+response = requests.post(token_api, json=payload, headers=headers).json()
+start_time = time.time()
 
-print("task status: ", response_json)
-print("waiting 7sec for response...")
+print("task status:", response)
+print("waiting 7 sec for response...")
 time.sleep(7)
 
 while True:
-    sts = requests.get(response_json["url"], headers=headers).json()
-    if sts["status"] == "processed" or sts["status"] == "failed":
-        print(f'time since request:- {int(time.time() - startTime)} seconds')
+    sts = requests.get(response["url"], headers=headers).json()
+    if sts["status"] in ["processed", "failed"]:
+        print(f'time since request: {int(time.time() - start_time)} seconds')
         print(f'status: {sts["status"]}\n{sts["token"]}')
         break
 
-    print("status: ", sts["status"])
+    print("status:", sts["status"])
     time.sleep(2)
+
 
 ```
 
