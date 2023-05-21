@@ -101,6 +101,60 @@ while True:
 
 ```
 
+```php
+<?php
+
+require 'vendor/autoload.php';
+
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Request;
+
+$apikey = "apikey";
+$token_api = "https://token.nocaptchaai.com/token";
+
+$headers = ['Content-Type' => 'application/json', 'apikey' => $apikey];
+$payload = [
+    "proxy" => [
+        "ip" => "123.45.678.9",
+        "port" => 1234,
+        "username" => "userid",
+        "password" => "pass#=#rd",
+        "type" => "https"
+    ],
+    "rqdata" => "eyJ0zI1NiJ9.eyJmIjowLCJ....",
+    "type" => "hcaptcha",
+    "url" => "accounts.hcaptcha.com",
+    "sitekey" => "7830874c-13ad-4cfe-98d7-e8b019dc1742",
+    "useragent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
+];
+
+$client = new Client(['headers' => $headers]);
+
+$response = $client->post($token_api, ['json' => $payload]);
+
+$responseJson = json_decode($response->getBody(), true);
+$startTime = time();
+
+echo "task status: " . print_r($responseJson, true) . "\n";
+echo "waiting 7sec for response...\n";
+sleep(7);
+
+while (true) {
+    $sts = $client->get($responseJson["url"]);
+    $stsJson = json_decode($sts->getBody(), true);
+
+    if ($stsJson["status"] == "processed" || $stsJson["status"] == "failed") {
+        echo 'time since request:- ' . (time() - $startTime) . " seconds\n";
+        echo 'status: ' . $stsJson["status"] . "\n" . $stsJson["token"] . "\n";
+        break;
+    }
+
+    echo "status: " . $stsJson["status"] . "\n";
+    sleep(2);
+}
+
+```
+
 
 :::
 
