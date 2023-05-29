@@ -13,7 +13,7 @@ This method sends a Token task to the api server.
 `Enterprise: 2000/$ Only wallet are allowed.`
 
 ::: tip
-Currently supports only normal hCaptcha and most of the enterprise hCaptcha.
+Currently supports only normal hCaptcha and most of the enterprise hCaptcha. Discord not supported for now.
 :::
 
 | Required    | Properties   | Type      | Description                                                                        |
