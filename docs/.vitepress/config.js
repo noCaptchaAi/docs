@@ -70,7 +70,7 @@ export default defineConfig({
       {
         text: "🔑 TOKEN Task",
         items: [
-          { text: "hCaptcha Normal", link: "/en/token/hCaptcha.md" },
+          { text: "hCaptcha", link: "/en/token/hCaptcha.md" },
         ],
       },
       {
