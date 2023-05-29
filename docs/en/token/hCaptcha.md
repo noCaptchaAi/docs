@@ -7,11 +7,25 @@ lang: en-US
 
 This method sends a Token task to the api server.
 
-`COST: 5 Requests per Task`
+## COST
+`Normal: 3000/$ or 5 Request credit from daily per successfull token generation. (Currently no unlimited plan for token)`
+
+`Enterprise: 2000/$ Only wallet are allowed.`
 
 ::: tip
-Currently supports only normal hCaptcha. Enterprise Support in progress.
+Currently supports only normal hCaptcha and most of the enterprise hCaptcha.
 :::
+
+| Required    | Properties   | Type      | Description                                                                        |
+| ----------- | ----------- | ---------- | ---------------------------------------------------------------------------------- |
+| `Required ` | `type ` | 	`String` | `hcaptcha`					                                |
+| `Required ` | `url` | 	`String` | `https://accounts.hcaptcha.com/demo` |
+| `Required ` | `sitekey` | `String`   | `a5f74b19-9e45-40e0-b45d-47ff91b7a6c2`                                            |
+| `optional ` | `enterprise` | `Bool`   | `True` or `False`                                     |
+| `optional ` | `useragent` | `String`  | `Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36`                                               |
+| `optional ` | `proxy`  | `Object`    | `{"ip": '1.1.1.1', "port": 8080, 'username': 'user', 'password': 'proxy-password', 'type': 'http'}` Note: `username` and `password` are optional |
+
+
 
 ## Send Token Task
 ```
@@ -37,6 +51,7 @@ payload = {
     "proxy": {"ip": "123.45.678.9", "port": 1234, "username": "userid", "password": "pass#=#rd", "type": "https"},
     "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",
     "type": "hcaptcha",
+    "enterprise": false'
     "url": "accounts.hcaptcha.com",
     "sitekey": "7830874c-13ad-4cfe-98d7-e8b019dc1742",
     "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
@@ -76,6 +91,7 @@ const payload = {
     },
     rqdata: "eyJ0zI1NiJ9.eyJmIjowLCJ....",
     type: "hcaptcha",
+    enterprise: false
     sitekey: " b17a7-90bf-4070-9296-62679",
     useragent
 }
@@ -143,6 +159,7 @@ $payload = [
     ],
     "rqdata" => "eyJ0zI1NiJ9.eyJmIjowLCJ....",
     "type" => "hcaptcha",
+    "enterprise" => true
     "url" => "accounts.hcaptcha.com",
     "sitekey" => "7830874c-13ad-4cfe-98d7-e8b019dc1742",
     "useragent" => "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
