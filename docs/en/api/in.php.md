@@ -50,12 +50,12 @@ def res():
     """Check task status"""
     try:
         id = request.args.get('id')
-        apikey = request.form.get('key')
+        apikey = request.args.get('key')
         action = request.args.get('action')
         json = request.args.get('json')
         if action == 'getbalance':
             bal = requests.get(f'{api_url}/res.php?key={apikey}&action=getbalance&json={json}').text
-            # print(bal)
+            print(bal)
             return bal
         tok = requests.get(f'{api_url}/res.php?key={apikey}&action=get&id={id}')
         if tok.status_code == 200:
