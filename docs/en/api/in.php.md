@@ -9,6 +9,52 @@ Endpoints:
 `https://token.nocaptchaai.com/res.php`
 
 
+## in.php example
+
+```php
+<?php
+function sendPostRequest($url, $formData) {
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $formData);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
+    return $response;
+}
+$url = "https://token.nocaptchaai.com/in.php";
+$formData = array(
+    "key" => "apikey",
+    "method" => "hcaptcha",
+    "sitekey" => "a5f74b19-9e45-40e0-b45d-47ff91b7a6c2",
+    "pageurl" => "https://accounts.hcaptcha.com"
+);
+
+$response = sendPostRequest($url, $formData);
+
+echo $response;
+?>
+```
+Response `OK|9935302373`
+
+## res.php
+
+```php
+<?php
+$url = "https://token.nocaptchaai.com/res.php?key=apikey&action=get&id=9935302373";
+
+$response = file_get_contents($url);
+
+echo $response;
+?>
+```
+
+# Response
+
+`CAPCHA_NOT_READY`
+
+`OK|P1_eyJ0eXAiOi.....`
 
 
 ## We do not provide ip address of our server if you want to use ip address you can run the python script and use `127.0.0.1` and port `8080`
