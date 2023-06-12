@@ -44,9 +44,12 @@ Response `OK|9935302373`
 <?php
 $url = "https://token.nocaptchaai.com/res.php?key=apikey&action=get&id=9935302373";
 
-$response = file_get_contents($url);
-
-echo $response;
+$response = "";
+while (!preg_match('/^(OK|ERROR)/', $response)) {
+    $response = file_get_contents($url);
+    echo $response . PHP_EOL;
+    usleep(500000);  // Pause for 500 milliseconds (0.5 seconds)
+}
 ?>
 ```
 
