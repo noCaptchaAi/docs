@@ -243,13 +243,12 @@ var_dump($response);
 | `visa1` | `1 request` | `ocr`    | ![webde](/ocr/visa1.png)|
 | `u1` | `1 request` | `ocr`    | ![webde](/ocr/u1.png)|
 
-## Need something different? Please Contact us
+## Need Custom Site?
 ### We do custom models on demand. 99% accuracy.
+#### Feel free to send email or find us on telegram or discord
 
-Discord: https://nocaptchaai.com/discord
-
-TeleGram: https://nocaptchaai.com/telegram
-
-Contact Email: ai@nocaptchaai.com
+### Discord: https://nocaptchaai.com/discord
+### Telegram: https://nocaptchaai.com/telegram
+### Email: ai@nocaptchaai.com
 
 Note: There's a one time charge for the labor of adding support.
