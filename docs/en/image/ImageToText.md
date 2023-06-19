@@ -229,6 +229,8 @@ var_dump($response);
 :::
 
 
+# ocrID 
+# All Supported ocrID for Extension and API
 
 | ID: required    | Cost        | Method: required | Sample                  |
 |-------|-------------|--------|-------------------------|
