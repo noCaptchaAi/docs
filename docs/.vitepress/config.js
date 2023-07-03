@@ -3,6 +3,7 @@ import { defineConfig } from "vitepress";
 export default defineConfig({
   lang: "en-US",
   title: "noCaptchaAi",
+  lastUpdated: false,
   description: "noCaptchaAi, fastest & afforadble captcha solving service",
   head: [
     // add plausible script
@@ -29,13 +30,13 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/noCaptchaAi' }
     ],
     nav: [
-      { text: "Guide", link: "/en/GetStarted/quickstart.html" },
+      { text: "Quickstart`", link: "/en/GetStarted/quickstart.html" },
       {
-        text: "Plans",
+        text: "PRICING",
         link: "https://nocaptchaai.com/plans",
       },
       {
-        text: "Dashboard",
+        text: "DASHBOARD",
         link: "https://dash.nocaptchaai.com/",
       },
     ],
