@@ -29,6 +29,7 @@ Supported List:
 - Amazon
 - OMGOMGOMG onion
 - MTCaptcha
+- morocco
 - Dell
 - Catch.au
 - Web.de
@@ -239,6 +240,7 @@ var_dump($response);
 | `catch` | `1 request` | `ocr`    | ![catch](/ocr/catch.png)|
 | `dell` | `1 request` | `ocr`    | ![dell](/ocr/dell.png)|
 | `mtcap` | `1 request` | `ocr`    | ![mtcap](/ocr/mtcap.png)|
+| `morocco` | `1 request` | `ocr`    | ![morocco](/ocr/morocco.png)|
 | `amazon` | `1 request` | `ocr`    | ![amazon](/ocr/amazon.jpeg)|
 | `zefoy` | `1 request` | `ocr`    | ![zefoy](/ocr/zefoy.png)|
 | `webde` | `1 request` | `ocr`    | ![webde](/ocr/webde.login.jpeg)|

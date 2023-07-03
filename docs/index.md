@@ -3,23 +3,31 @@ layout: home
 
 hero:
   name: noCaptcha Ai
-  tagline: Fast and Cheap CAPTCHA recognition and machine learning solution. hCAPTCHA, reCAPTCHA v2, OCR-Normal Captcha solutions.
+  tagline: Fast and Cheap CAPTCHA recognition and machine learning solution. hCAPTCHA, reCAPTCHA v2, OCR-ImageToText Captcha solutions.
   image:
-    src: "./og.webp"
+    src: "./hero.png"
     alt: VitePress
   actions:
     - theme: brand
       text: Get Started
       link: /en/GetStarted/quickstart.md
     - theme: alt
-      text: 💕 Get Chrome Extension
-      link: https://github.com/noCaptchaAi/noCaptcha_extension
+      text: 💕 Get Chrome/Firefox Extension
+      link: https://github.com/noCaptchaAi/
 
 features:
   - icon: 💕
     title: Chrome Extension
-    link: https://github.com/noCaptchaAi/noCaptcha_extension
-    details: Open Source hCaptcha, reCaptcha v2, OCR Captcha with our efficient chrome extension.
+    link: https://github.com/noCaptchaAi/chrome-extension
+    details: -hCaptcha - reCaptcha v2
+  - icon: 💕
+    title: Chrome Extension (New)
+    link: https://github.com/noCaptchaAi/chrome
+    details: -hCaptcha - reCaptcha v2 - ImageToText/OCRs.
+  - icon: 💕
+    title: Firefox Addon (New)
+    link: https://github.com/noCaptchaAi/firefox-addon
+    details: -hCaptcha - reCaptcha v2 - ImageToText/OCR
 
   - icon: 😊
     title: Easy Peasy API
@@ -35,4 +43,5 @@ features:
     title: Fastest Solving ~ Anywhere
     details: On average we serve results around ~ 0.02s it's just that fast. For Users, bots and use cases relying on mission critical time.
     link: /en/GetStarted/quickstart.html
+
 ---
