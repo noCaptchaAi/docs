@@ -55,8 +55,7 @@ export default defineConfig({
         items: [
           { text: "Basics", link: "/en/api/basics.md" },
           { text: "2Captcha API Compatible", link: "/en/api/in.php.md" },
-          { text: "3rd Party Integration", link: "/en/api/integration.md" },
-          // { text: "Languages", link: "/en/api/lang.md" },
+          { text: "3rd Party Integration", link: "/en/api/Integration.md" },
           { text: "Account Balance", link: "/en/account/getBalance.md" },
         ],
       },
