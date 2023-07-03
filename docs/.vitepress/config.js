@@ -30,7 +30,7 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/noCaptchaAi' }
     ],
     nav: [
-      { text: "Quickstart`", link: "/en/GetStarted/quickstart.html" },
+      { text: "Quickstart", link: "/en/GetStarted/quickstart.html" },
       {
         text: "PRICING",
         link: "https://nocaptchaai.com/plans",
