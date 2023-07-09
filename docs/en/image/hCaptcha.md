@@ -7,20 +7,84 @@ lang: en-US
 
 `Normal` / `Enterprise`
 
-`Pricing: 7000 Requests/ 1$`
+`COST : 1 request = 1 challenge` 
 
-`COST: 1 request each 3x3 = 9 images`
+```JSON
+PAID: POST https://pro.nocaptchaai.com/solve
+FREE: POST https://free.nocaptchaai.com/solve
+Private: POST https://custom-url.com/solve
 
-::: tip
+headers: {
+    "Content-Type": "application/json",
+    "apikey": "apikey"
+}
+```
+### Image Count / Each `POST` Request
+ - `Grid -> (min 9 max 54)` 
+ - `Bbox -> (min 1 max 2)`
+ - `Multi -> (min 1 max 2)`
+
+
 
 Visit [`Prepare hCaptcha Data`](./PrepareData) prepare payload data for sending
 
-![api info](/s.webp)
+<!-- ![api info](/s.webp) -->
+![api info](/types.png)
+
+
+::: code-group
+
+```GRID
+{   
+    "images" : {
+       "0": "/9j/AQSkZJRgABAQAAAQABAA...",
+    //    ... image url --> base64hash
+       "8": "/9j/AQSkZJRgABAQAAAQABAA...",
+    //    ... MAX
+       "54": "/9j/AQSkZJRgABAQAAAQABAA..."        
+    },
+    "target": "Please click each image containing a basketball",
+    "type": "grid", // challenge type
+    "method": "hcaptcha_base64", 
+    "sitekey": "xx-xx-xx-xx", // hcaptcha sitekey
+    "site": "domain.com",
+    "ln": "en", // language/locale code
+}
+```
+```BBOX
+{
+  "images": {
+    "0": "/9j/AQSkZJRgABAQAAAQABAA..."
+    },
+  "target": "Please click center of owl's head",
+  "method": "hcaptcha_base64",
+  "type": "bbox",
+  "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
+  "site": "nocaptchaai.com",
+  "ln": "en",
+}
+```
+```MULTI
+{
+    "images": {
+        "0": "/9j/AQSkZJRgABAQAAAQABAA..."
+    },
+    "target": "Select the most accurate description of the image",
+    "method": "hcaptcha_base64",
+    "type": "multi",
+    "choices": [
+        "Living room",
+        "Bedroom",
+        "Kitchen"
+    ],
+    "sitekey": "ef7cabfd-741e-4643-855f-77308adedef5",
+    "site": "cryptowin.io",
+    "ln": "en",
+    "softid": "chromeExt_V1.7.5"
+}
+```
 :::
 
-```
-type: "grid", // "bbox" and "multi"  
-```
 
 
 ## Send hCaptcha Task 

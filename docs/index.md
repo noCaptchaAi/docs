@@ -3,17 +3,20 @@ layout: home
 
 hero:
   name: noCaptcha Ai
-  tagline: Fast and Cheap CAPTCHA recognition and machine learning solution. hCAPTCHA, reCAPTCHA v2, OCR-ImageToText Captcha solutions.
+  tagline: Fast and Cheap CAPTCHA recognition and machine learning solution. hCAPTCHA, reCAPTCHA v2, OCR/ImageToText Captcha solutions.
   image:
-    src: "./hero.png"
+    src: ./hero.gif
     alt: VitePress
   actions:
     - theme: brand
       text: Get Started
       link: /en/GetStarted/quickstart.md
     - theme: alt
-      text: 💕 Get Chrome/Firefox Extension
+      text: Chrome/Firefox Extension
       link: https://github.com/noCaptchaAi/
+    - theme: alt
+      text: Dashboard
+      link: https://dash.nocaptchaai.com/
 
 features:
   - icon: 💕
@@ -30,12 +33,12 @@ features:
     details: -hCaptcha - reCaptcha v2 - ImageToText/OCR
 
   - icon: 😊
-    title: Easy Peasy API
+    title: Easy API
     link: /en/GetStarted/quickstart.html
     details: Get started instantly with our API Examples, our pupetteer package and list of example scripts.
 
   - icon: ✔️
-    title: Truly Cheapest Solvers
+    title: Affordable Solving
     details: 110000 hcapctha solves = 1$ on 99$ plans. Only provider with this much offering per dollar on subscription plans.
     link: /en/GetStarted/quickstart.html
 

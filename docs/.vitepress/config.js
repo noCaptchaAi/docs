@@ -2,7 +2,8 @@ import { defineConfig } from "vitepress";
 
 export default defineConfig({
   lang: "en-US",
-  title: "noCaptchaAi",
+  title: "noCaptcha Ai : CAPTCHA Solver Service | hCaptcha solver, reCaptcha v2, Image to Text/ OCR Captcha solving - Machine learning solution",
+
   lastUpdated: false,
   description: "noCaptchaAi, fastest & afforadble captcha solving service",
   head: [
@@ -18,9 +19,9 @@ export default defineConfig({
     ],
   ],
   themeConfig: {
-    siteTitle: "noCaptchaAi",
+    siteTitle: "noCaptcha Ai",
     logo: "/og.webp",
-    alt: "noCaptchaAi",
+    alt: "noCaptchaAi : CAPTCHA Solver Service | hCaptcha solver, reCaptcha v2, Image to Text/ OCR Captcha solving - Machine learning solution",
     socialLinks: [
       { icon: 'discord', link: 'https://nocaptchaai.com/discord' },
       { icon: {
@@ -42,7 +43,7 @@ export default defineConfig({
     ],
     sidebar: [
       {
-        text: "GET Started",
+        text: "Get Started",
         items: [
           { text: "About noCaptchaAi", link: "/en/about.md" },
           { text: "QuickStart", link: "/en/GetStarted/quickstart.md" },
@@ -61,19 +62,19 @@ export default defineConfig({
       },
 
       {
-        text: "🖼️ IMAGE Task",
+        text: "🖼️ IMAGE Tasks",
         items: [
           { text: "Prepare Data", link: "/en/image/PrepareData.md" },
-          { text: "hCaptchaImageTask ", link: "/en/image/hCaptcha.md" },
-          { text: "reCaptchaImageTask", link: "/en/image/reCaptcha.md" },
-          { text: "ImageToText", link: "/en/image/ImageToText.md" },
-          { text: "ProBot ImageToText", link: "/en/image/probot.md" },
+          { text: "hCAPTCHA Task ", link: "/en/image/hCaptcha.md" },
+          { text: "ReCAPTCHA Task", link: "/en/image/reCaptcha.md" },
+          { text: "OCR - ImageToText Task", link: "/en/image/ImageToText.md" },
+          { text: "ProBot Task", link: "/en/image/probot.md" },
         ],
       },
       {
-        text: "🔑 TOKEN Task",
+        text: "🔑 TOKEN Tasks",
         items: [
-          { text: "hCaptcha", link: "/en/token/hCaptcha.md" },
+          { text: "hCAPTCHA Token", link: "/en/token/hCaptcha.md" },
         ],
       },
       // {
@@ -84,7 +85,7 @@ export default defineConfig({
       //   ],
       // },
       {
-        text: "Audio Task",
+        text: "🔊 Speech To Text Tasks",
         items: [
           { text: "ReCaptcha v2 Audio", link: "/en/audio/rcaudio.md" }
         ],
@@ -109,7 +110,7 @@ export default defineConfig({
       indexName: "...",
     },
     footer: {
-      message: "I'm a Robot.",
+      message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
       copyright: "Copyright © 2022-2023 noCaptchaAi.com",
     },
   },

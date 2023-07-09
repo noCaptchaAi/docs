@@ -11,7 +11,9 @@ For latest plans information visit or apikey: [`dashboard`](https://dash.nocaptc
 
 ```json
 
-POST https://pro.nocaptchaai.com/solve
+Paid: POST https://pro.nocaptchaai.com/solve
+FREE: POST https://pro.nocaptchaai.com/solve
+
 headers: {
     "Content-Type": "application/json",
     "apikey": "apikey"
@@ -34,7 +36,9 @@ Supported List:
 - Catch.au
 - Web.de
 - zefoy
+- caixa br
 - visaAppoinment
+- 0xCheats
 
 
 ### Send ImageToText Task
@@ -246,6 +250,8 @@ var_dump($response);
 | `webde` | `1 request` | `ocr`    | ![webde](/ocr/webde.login.jpeg)|
 | `visa1` | `1 request` | `ocr`    | ![webde](/ocr/visa1.png)|
 | `u1` | `1 request` | `ocr`    | ![webde](/ocr/u1.png)|
+| `oxcheats` | `1 request` | `ocr`    | ![webde](/ocr/oxcheats.png)|
+| `caixa` | `1 request` | `ocr`    | ![webde](/ocr/caixa.png)|
 
 ## Need Custom Site?
 ### We do custom models on demand. 99% accuracy.
