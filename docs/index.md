@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: noCaptcha Ai
-  tagline: Fast and Cheap CAPTCHA recognition and machine learning solution. hCAPTCHA, reCAPTCHA v2, OCR/ImageToText Captcha solutions.
+  tagline: Cheapest CAPTCHA recognition for hCAPTCHA, reCAPTCHA v2, reCaptcha Audio, OCR/ImageToText Captcha.
   image:
     src: ./hero.gif
     alt: VitePress
@@ -12,8 +12,8 @@ hero:
       text: Get Started
       link: /en/GetStarted/quickstart.md
     - theme: alt
-      text: Chrome/Firefox Extension
-      link: https://github.com/noCaptchaAi/
+      text: Pricing
+      link: https://nocaptchaai.com/plans
     - theme: alt
       text: Dashboard
       link: https://dash.nocaptchaai.com/

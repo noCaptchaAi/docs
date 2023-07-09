@@ -31,14 +31,18 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/noCaptchaAi' }
     ],
     nav: [
-      { text: "Quickstart", link: "/en/GetStarted/quickstart.html" },
+      { text: "Quick Start", link: "/en/GetStarted/quickstart.html" },
       {
-        text: "PRICING",
+        text: "Price",
         link: "https://nocaptchaai.com/plans",
       },
       {
-        text: "DASHBOARD",
+        text: "Dashboard",
         link: "https://dash.nocaptchaai.com/",
+      },
+      {
+        text: "Discord",
+        link: "https://nocaptchaai.com/discord",
       },
     ],
     sidebar: [
