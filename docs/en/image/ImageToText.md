@@ -39,6 +39,8 @@ Supported List:
 - caixa br
 - visaAppoinment
 - 0xCheats
+- zoho
+- protypers
 
 
 ### Send ImageToText Task
@@ -234,8 +236,8 @@ var_dump($response);
 :::
 
 
-# ocrID 
-# All Supported ocrID for Extension and API
+# ocrID: All Supported Site variations
+## For Extension and API
 
 | ID: required    | Cost        | Method: required | Sample                  |
 |-------|-------------|--------|-------------------------|
@@ -252,6 +254,8 @@ var_dump($response);
 | `u1` | `1 request` | `ocr`    | ![webde](/ocr/u1.png)|
 | `oxcheats` | `1 request` | `ocr`    | ![webde](/ocr/oxcheats.png)|
 | `caixa` | `1 request` | `ocr`    | ![webde](/ocr/caixa.png)|
+| `zoho` | `1 request` | `ocr`    | ![webde](/ocr/zoho1.jpg) ![webde](/ocr/zoho2.jpg) ![webde](/ocr/zoho3.jpg)|
+| `protypers` | `1 request` | `ocr`    | ![webde](/ocr/protypers.png)|
 
 ## Need Custom Site?
 ### We do custom models on demand. 99% accuracy.
