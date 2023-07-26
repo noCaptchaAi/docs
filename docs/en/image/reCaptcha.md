@@ -7,7 +7,7 @@ lang: en-US
 
 This method sends a reCaptcha image solve task to the api server.
 
-`COST: FREE BETA`
+`COST: 7000 requests per 1$ or 1 credit for daily plan.`
 
 ::: warning
 #### WORK IN PROGRESS
@@ -26,10 +26,10 @@ const baseurl = "https://beta.nocaptchaai.com/solve";
     apikey: settings.apikey,
   };
 
-const image_urls = []; // get all the images pushed to array
+const images_base64 = {"0" "base64 of the full image"}; // get all the images pushed to array
 
 const payload = {
-        images: image_urls, // array []
+        images: images_base64,
         target: "bicycle", // "a fire hydrant", "taxi" etc
         // split_33 for dynamic secondary 3x3 grid images
         type: "split_33", // "33" => 3x3 grid iamge , "44" => for 4x4
