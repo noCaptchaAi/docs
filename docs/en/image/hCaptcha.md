@@ -573,6 +573,24 @@ int main() {
 
 
 ## Task RESPONSE
+
+Always check the task status first. Please do a get request to the provaided url to get the answer.
+
+NOTE: URL is dynamic.
+
+If task status new:
+```
+{
+    "answer": [],
+    "id": "hbbox_B4tZnUbqfnQrmb0n",
+    "processing_time": "0.0s",
+    "solution": [],
+    "status": "new",
+    "target": "b_bell",
+    "url": "https://*.nocaptchaai.com/status?id=hbbox_B4tZnUbqfnQrmb0n"
+}
+```
+If task solved instantly:
 ::: code-group
 ```grid
 {
