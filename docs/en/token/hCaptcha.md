@@ -49,9 +49,9 @@ token_api = "https://token.nocaptchaai.com/token"
 headers = {"Content-Type": "application/json", "apikey": apikey}
 payload = {
     "proxy": {"ip": "123.45.678.9", "port": 1234, "username": "userid", "password": "pass#=#rd", "type": "https"},
-    "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",
+    "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....", # To use rqdata enterprise must be true.
     "type": "hcaptcha",
-    "enterprise": false'
+    "enterprise": true'
     "url": "accounts.hcaptcha.com",
     "sitekey": "7830874c-13ad-4cfe-98d7-e8b019dc1742",
     "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36"
@@ -91,7 +91,7 @@ const payload = {
     },
     rqdata: "eyJ0zI1NiJ9.eyJmIjowLCJ....",
     type: "hcaptcha",
-    enterprise: false
+    enterprise: true
     sitekey: " b17a7-90bf-4070-9296-62679",
     useragent
 }
@@ -211,7 +211,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             "password": "pass#=#rd",
             "type": "https"
         },
-        "rqdata": "eyJ0zI1NiJ9.eyJmIjowLCJ....",
         "type": "hcaptcha",
         "url": "accounts.hcaptcha.com",
         "sitekey": "7830874c-13ad-4cfe-98d7-e8b019dc1742",
