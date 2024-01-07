@@ -643,10 +643,10 @@ If task solved instantly:
     "url": "https://us-s1.nocaptchaai.com/status?id=hmulti_3Or0gpasE46RdB5d"
 }
 ```
-:::
 
 
-# examples required
+
+## examples required
 
 <img width="392" alt="image" src="https://github.com/noCaptchaAi/docs/assets/120220796/de64744c-466e-40df-b0ef-558ad592eee5">
 
@@ -665,4 +665,4 @@ example on the above image is:
 
 
 
-
+:::
