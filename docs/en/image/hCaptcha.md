@@ -646,7 +646,7 @@ If task solved instantly:
 
 
 
-## examples required
+## Examples required
 
 <img width="392" alt="image" src="https://github.com/noCaptchaAi/docs/assets/120220796/de64744c-466e-40df-b0ef-558ad592eee5">
 
