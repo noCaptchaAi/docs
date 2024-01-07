@@ -62,6 +62,7 @@ Visit [`Prepare hCaptcha Data`](./PrepareData) prepare payload data for sending
   "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
   "site": "nocaptchaai.com",
   "ln": "en",
+   "examples": ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."] # For some tasks it required!
 }
 ```
 ```MULTI
@@ -209,6 +210,7 @@ base64_json = {
     "sitekey": "xx-xx-xx-xx", # eg. b17a7-90bf-4070-9296-62679 from html page
     "site": "domain.com", # url of the captcha page
     "ln": "en", # "ru" for russian or  "ar" arabic | language of the captcha
+    "examples": ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."] # For some tasks it required!
 }
 
 def solve(images, target):
@@ -644,4 +646,23 @@ If task solved instantly:
 :::
 
 
-.. updating soon
+# examples required
+
+<img width="392" alt="image" src="https://github.com/noCaptchaAi/docs/assets/120220796/de64744c-466e-40df-b0ef-558ad592eee5">
+
+Currently example/example required for this tasks:
+
+    1. most similar object to following reference shape
+
+    2. object most similar to sketches
+
+Please add the base64 of the example image like this way:
+"examples": ["base64 0f the image", "base64 of the image..."]
+
+example on the above image is:
+
+<img width="38" alt="image" src="https://github.com/noCaptchaAi/docs/assets/120220796/29f79656-88cf-428c-94b6-da9d83a7e135">
+
+
+
+
