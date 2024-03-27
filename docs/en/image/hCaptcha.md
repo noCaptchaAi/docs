@@ -1,5 +1,5 @@
 ---
-title: Send hCaptcha Image Tasks
+title: Send hCaptcha Image Task
 lang: en-US
 ---
 
@@ -7,50 +7,53 @@ lang: en-US
 
 `Normal` / `Enterprise`
 
-`COST : 1 request = 1 challenge` 
+`COST : 1 request = 1 challenge`
 
 ```JSON
 PAID: POST https://pro.nocaptchaai.com/solve
 FREE: POST https://free.nocaptchaai.com/solve
-Private: POST https://custom-url.com/solve
+Private: POST https://custom.nocaptchaai.com/solve
 
 headers: {
     "Content-Type": "application/json",
     "apikey": "apikey"
 }
 ```
+
 ### Image Count / Each `POST` Request
- - `Grid -> (min 9 max 54)` 
- - `Bbox -> (min 1 max 2)`
- - `Multi -> (min 1 max 2)`
 
-
+- `Grid -> (min 9 max 54)`
+- `Bbox -> (min 1 max 2)`
+- `Multi -> (min 1 max 2)`
 
 Visit [`Prepare hCaptcha Data`](./PrepareData) prepare payload data for sending
 
-<!-- ![api info](/s.webp) -->
 ![api info](/types.png)
 
+NOTE: Required example images now for all types
 
 ::: code-group
 
 ```GRID
-{   
+{
     "images" : {
        "0": "/9j/AQSkZJRgABAQAAAQABAA...",
-    //    ... image url --> base64hash
        "8": "/9j/AQSkZJRgABAQAAAQABAA...",
-    //    ... MAX
-       "54": "/9j/AQSkZJRgABAQAAAQABAA..."        
+       "54": "/9j/AQSkZJRgABAQAAAQABAA..."
     },
     "target": "Please click each image containing a basketball",
     "type": "grid", // challenge type
-    "method": "hcaptcha_base64", 
+    "method": "hcaptcha_base64",
     "sitekey": "xx-xx-xx-xx", // hcaptcha sitekey
     "site": "domain.com",
     "ln": "en", // language/locale code
+     "target": "Please click on each entity similar to the following silhouette.",
+    "examples": [
+        "/9j/4AAQSkZJRgAB/2Q=="  // image base64
+    ],
 }
 ```
+
 ```BBOX
 {
   "images": {
@@ -62,9 +65,10 @@ Visit [`Prepare hCaptcha Data`](./PrepareData) prepare payload data for sending
   "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
   "site": "nocaptchaai.com",
   "ln": "en",
-   "examples": ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."] # For some tasks it required!
+  "examples":["/9j/4AAQSkZ...", "/9j/4AAQSk=..", "/9j/4AAQSk.."] // Images
 }
 ```
+
 ```MULTI
 {
     "images": {
@@ -81,14 +85,13 @@ Visit [`Prepare hCaptcha Data`](./PrepareData) prepare payload data for sending
     "sitekey": "ef7cabfd-741e-4643-855f-77308adedef5",
     "site": "cryptowin.io",
     "ln": "en",
-    "softid": "chromeExt_V1.7.5"
+    "examples":["/9j/4AAQSkZ...", "/9j/4AAQSk=..", "/9j/4AAQSk.."] // Images
 }
 ```
+
 :::
 
-
-
-## Send hCaptcha Task 
+## Send hCaptcha Task
 
 ::: code-group
 
@@ -103,11 +106,13 @@ const base64_json = {
     images,
     target: "Please click each image containing a basketball",
     // NEW
-    type: "grid", // "bbox" and "multi"    
+    type: "grid", // "bbox" and "multi"
     method: "hcaptcha_base64", // method name
     sitekey: "xx-xx-xx-xx", // eg. b17a7-90bf-4070-9296-62679 from html page
     site: "domain.com", // url of the captcha page
     ln: "en", // "ru" for russian or  "ar" arabic | language of the captcha
+    examples:["/9j/4AAQSkZ...", "/9j/4AAQSk=..", "/9j/4AAQSk.."] // Images
+
 }
 
 async function solve(images, target) {
@@ -149,6 +154,8 @@ public class Main {
         base64_json.put("sitekey", "xx-xx-xx-xx");
         base64_json.put("site", "domain.com");
         base64_json.put("ln", "en");
+        base64_json.put("ln", ["/9j/4AAQSkZ...", "/9j/4AAQSk=..", "/9j/4AAQSk.."]);
+
         try {
             solve();
         } catch (IOException e) {
@@ -238,6 +245,7 @@ $base64_json = array(
     "sitekey" => "xx-xx-xx-xx", // eg. b17a7-90bf-4070-9296-62679 from html page
     "site" => "domain.com", // url of the captcha page
     "ln" => "en", // "ru" for russian or  "ar" arabic | language of the captcha
+    "examples": ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."] # For some tasks it required!
 );
 
 function solve($images, $target) {
@@ -279,6 +287,8 @@ type Base64JSON struct {
     Sitekey string            `json:"sitekey"`
     Site    string            `json:"site"`
     Ln      string            `json:"ln"`
+    Examples string           `json": ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."]`
+
 }
 
 func solve(images map[string]string, target string) {
@@ -289,6 +299,7 @@ func solve(images map[string]string, target string) {
         Sitekey: "xx-xx-xx-xx", // replace with your sitekey
         Site:    "domain.com",  // replace with your site
         Ln:      "en",
+        Examples: ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."],
     }
     jsonBody, _ := json.Marshal(base64_json)
 
@@ -339,6 +350,7 @@ class Program
             { "sitekey", "xx-xx-xx-xx" },
             { "site", "domain.com" },
             { "ln", "en" },
+            { "examples, ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."]}
         };
 
         await Solve(images, base64_json);
@@ -382,6 +394,7 @@ struct Base64Json {
     sitekey: String, // eg. b17a7-90bf-4070-9296-62679 from html page
     site: String, // url of the captcha page
     ln: String, // "ru" for russian or  "ar" arabic | language of the captcha
+    examples: ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."]
 }
 
 async fn solve(images: HashMap<String, String>, target: String) -> Result<(), reqwest::Error> {
@@ -392,6 +405,7 @@ async fn solve(images: HashMap<String, String>, target: String) -> Result<(), re
         sitekey: "xx-xx-xx-xx".to_string(),
         site: "domain.com".to_string(),
         ln: "en".to_string(),
+        examples: ["/9j/AQSkZJRgABAQAAAQABAA...", "/9j/AQSkZJRgABAQAAAQABAA..."]
     };
 
     let mut headers = HeaderMap::new();
@@ -422,99 +436,10 @@ fn main() {
 }
 ```
 
-```C
-#include <stdio.h>
-#include <curl/curl.h>
-#include <string.h>
-#include <stdlib.h>
-
-const char* apikey = "apikey";
-const char* proapi = "https://pro.nocaptchaai.com/solve";
-const char* sitekey = "xx-xx-xx-xx";
-const char* site = "domain.com";
-const char* ln = "en";
-const char* target = "Please click each image containing a basketball";
-
-struct MemoryStruct {
-    char* memory;
-    size_t size;
-};
-
-static size_t WriteMemoryCallback(void* contents, size_t size, size_t nmemb, void* userp) {
-    size_t realsize = size * nmemb;
-    struct MemoryStruct* mem = (struct MemoryStruct*)userp;
-
-    mem->memory = realloc(mem->memory, mem->size + realsize + 1);
-    if (mem->memory == NULL) {
-        /* out of memory! */
-        printf("not enough memory (realloc returned NULL)\n");
-        return 0;
-    }
-
-    memcpy(&(mem->memory[mem->size]), contents, realsize);
-    mem->size += realsize;
-    mem->memory[mem->size] = 0;
-
-    return realsize;
-}
-
-int main() {
-    CURL* curl;
-    CURLcode res;
-
-    struct MemoryStruct chunk;
-
-    chunk.memory = malloc(1);
-    chunk.size = 0;
-
-    char json_string[4096];
-    snprintf(json_string, sizeof(json_string), "{ \"images\":{}, \"target\":\"%s\", \"method\":\"hcaptcha_base64\", \"sitekey\":\"%s\", \"site\":\"%s\", \"ln\":\"%s\" }", target, sitekey, site, ln);
-
-    curl_global_init(CURL_GLOBAL_ALL);
-
-    curl = curl_easy_init();
-    if (curl) {
-        struct curl_slist* headers = NULL;
-        headers = curl_slist_append(headers, "Content-type: application/json");
-        char apikey_header[1024];
-        snprintf(apikey_header, sizeof(apikey_header), "apikey: %s", apikey);
-        headers = curl_slist_append(headers, apikey_header);
-
-        curl_easy_setopt(curl, CURLOPT_URL, proapi);
-        curl_easy_setopt(curl, CURLOPT_POST, 1L);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, json_string);
-        curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteMemoryCallback);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void*)&chunk);
-
-        res = curl_easy_perform(curl);
-
-        if (res != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n",
-                curl_easy_strerror(res));
-        }
-        else {
-            printf("%s\n", chunk.memory);
-        }
-
-        curl_slist_free_all(headers);
-        curl_easy_cleanup(curl);
-    }
-
-    curl_global_cleanup();
-    free(chunk.memory);
-
-    return 0;
-}
-
-```
-
 :::
 
-
-
-
 ## Task Payload
+
 ::: code-group
 
 ```grid
@@ -536,6 +461,7 @@ int main() {
   "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
   "site": "nocaptchaai.com",
   "ln": "en",
+  "examples": ["/9j/4AAQSkZJRgAB/2Q=="] // example images
 }
 ```
 
@@ -550,8 +476,11 @@ int main() {
   "sitekey": "b17bafa7-90bf-4070-9296-626796423086",
   "site": "nocaptchaai.com",
   "ln": "en",
+  "examples": ["/9j/4AAQSkZJRgAB/2Q=="] // example images
+
 }
 ```
+
 ```multi
 {
     "images": {
@@ -568,11 +497,12 @@ int main() {
     "sitekey": "ef7cabfd-741e-4643-855f-77308adedef5",
     "site": "cryptowin.io",
     "ln": "en",
-    "softid": "chromeExt_V1.7.5"
+    "softid": "chromeExt_V1.7.5",
+    "examples": ["/9j/4AAQSkZJRgAB/2Q=="] // example images
 }
 ```
-:::
 
+:::
 
 ## Task RESPONSE
 
@@ -581,6 +511,7 @@ Always check the task status first. Please do a get request to the provaided url
 NOTE: URL is dynamic.
 
 If task status new:
+
 ```
 {
     "answer": [],
@@ -592,8 +523,10 @@ If task status new:
     "url": "https://*.nocaptchaai.com/status?id=hbbox_B4tZnUbqfnQrmb0n"
 }
 ```
+
 If task solved instantly:
 ::: code-group
+
 ```grid
 {
     "answer": [],
@@ -611,6 +544,7 @@ If task solved instantly:
     "url": "https://pro.nocaptchaai.com/status?id=hgrid_yx4ykHAL1MBvmFq3"
 }
 ```
+
 ```bbox
 {
     "answer": [
@@ -629,6 +563,7 @@ If task solved instantly:
     "status": "solved"
 }
 ```
+
 ```multi
 {
     "answer": [
@@ -644,25 +579,24 @@ If task solved instantly:
 }
 ```
 
-
-
 ## Examples required
+
+Currently example/example required for these tasks:
+
+`"examples": ["base64 0f the image", "base64 of the image..."]`
+
+    1. most similar object to following reference shape
+    2. object most similar to sketches
+    3. following silhouette
+    4. entities that can climb trees
+
+NOTE: But we recommend you send example images by default for all variants for best detection. 
+
 
 <img width="392" alt="image" src="https://github.com/noCaptchaAi/docs/assets/120220796/de64744c-466e-40df-b0ef-558ad592eee5">
 
-Currently example/example required for this tasks:
+<img width="285" alt="expl2" src="https://github.com/noCaptchaAi/docs/assets/38348819/25588d4d-d83d-43df-a721-70fd29e575ed">
 
-    1. most similar object to following reference shape
-
-    2. object most similar to sketches
-
-Please add the base64 of the example image like this way:
-"examples": ["base64 0f the image", "base64 of the image..."]
-
-example on the above image is:
-
-<img width="38" alt="image" src="https://github.com/noCaptchaAi/docs/assets/120220796/29f79656-88cf-428c-94b6-da9d83a7e135">
-
-
+<img width="312" alt="expl1" src="https://github.com/noCaptchaAi/docs/assets/38348819/64ca25bb-dd22-418a-92cb-b0a14f328b75">
 
 :::
