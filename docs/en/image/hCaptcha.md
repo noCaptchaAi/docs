@@ -47,7 +47,6 @@ NOTE: Required example images now for all types
     "sitekey": "xx-xx-xx-xx", // hcaptcha sitekey
     "site": "domain.com",
     "ln": "en", // language/locale code
-     "target": "Please click on each entity similar to the following silhouette.",
     "examples": [
         "/9j/4AAQSkZJRgAB/2Q=="  // image base64
     ],
