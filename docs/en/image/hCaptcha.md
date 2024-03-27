@@ -1,5 +1,5 @@
 ---
-title: Send hCaptcha Image Task
+title: Send hCaptcha Image Tasks
 lang: en-US
 ---
 
