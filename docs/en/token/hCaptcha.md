@@ -8,12 +8,10 @@ lang: en-US
 This method sends a Token task to the api server.
 
 ## COST
-`Normal: 3000/$ or 5 Request credit from daily per successfull token generation. (Currently no unlimited plan for token)`
-
-`Enterprise: 2000/$ Only wallet are allowed.`
+`hCaptcha Token (Normal/Enterprise) / 3.5 credits (10s)`
 
 ::: tip
-Currently supports only normal hCaptcha and most of the enterprise hCaptcha. Discord not supported for now.
+Token only available in Wallet Usage. Subscription plans are not available for tokens yet.
 :::
 
 | Required    | Properties   | Type      | Description                                                                        |

@@ -99,7 +99,6 @@ export default defineConfig({
       {
         text: "📚 SOFTWARE LIBRARY",
         items: [
-          { text: "Software List", link: "en/api/basics.html#software-sdk" },
           { text: "Chrome Extension", link: "https://nocaptchaai.com/chrome" },
           {
             text: "Tampermonkey",
@@ -115,7 +114,7 @@ export default defineConfig({
     },
     footer: {
       message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
-      copyright: "Copyright © 2022-2023 noCaptchaAi.com",
+      copyright: "Copyright © 2024 noCaptchaAi.com",
     },
   },
   locales: {

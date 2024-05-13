@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: noCaptcha Ai
-  tagline: Cheapest CAPTCHA recognition for hCAPTCHA, reCAPTCHA v2, reCaptcha Audio, OCR/ImageToText Captcha.
+  tagline: Automated CAPTCHA recognition for hCAPTCHA, funCaptcha, Awswaf, lemin, reCAPTCHA v2, , BLS, mtCaptcha, OCR etc. More soon..
   image:
     src: ./hero.gif
     alt: VitePress
@@ -20,17 +20,17 @@ hero:
 
 features:
   - icon: 💕
-    title: Chrome Extension
+    title: Chrome Extension (dark)
     link: https://github.com/noCaptchaAi/chrome-extension
-    details: -hCaptcha - reCaptcha v2
+    details: hCaptcha, reCaptcha v2
   - icon: 💕
-    title: Chrome Extension (New)
+    title: Chrome Extension (White)
     link: https://github.com/noCaptchaAi/chrome
-    details: -hCaptcha - reCaptcha v2 - ImageToText/OCRs.
+    details: hCaptcha, reCaptcha v2, BLS, ImageToText/OCRs and more
   - icon: 💕
     title: Firefox Addon (New)
     link: https://github.com/noCaptchaAi/firefox-addon
-    details: -hCaptcha - reCaptcha v2 - ImageToText/OCR
+    details: hCaptcha, reCaptcha v2, ImageToText/OCR
 
   - icon: 😊
     title: Easy API

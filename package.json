@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "docs:dev": "vitepress dev docs --port 3000",
     "docs:build": "vitepress build docs",
@@ -12,13 +13,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "1.0.0-beta.4",
-    "vue": "^3.3.4"
+    "vitepress": "1.1.4",
+    "vue": "^3.4.27"
   },
   "pnpm": {
     "peerDependencyRules": {
       "ignoreMissing": [
-        "@algolia/client-search"
+        "@algolia/client-search",
+        "search-insights"
       ]
     }
   }
