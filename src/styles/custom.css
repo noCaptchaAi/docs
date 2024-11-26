@@ -1,0 +1,57 @@
+:root {
+  --sl-font: 'barlow', serif;
+  --sl-content-width: 50rem;
+  --sl-text-5xl: 3.0rem;
+}
+h1, h2, h3, h4, h5, h6, span {
+  font-family: 'barlow', serif;
+  font-weight: 300;
+}
+p, strong, li, a, blockquote, code, pre, table, tr, td, th, input, textarea, button {
+  font-family: 'Alata', serif;
+}
+
+ul > li {
+  padding: 0;
+}
+ul > li:hover{
+  background-color: var(--sl-color-gray-100);
+}
+li:hover{
+  border-left: 1px solid gray;
+}
+li{
+  border-left: 1px solid rgba(128, 128, 128, 0);
+}
+div.sidebar-pane .top-level > li + li{
+  margin-top: 0.3rem !important;
+}
+span.large{
+  font: 1.1rem/1.0 'barlow', serif;
+}
+
+#starlight__sidebar {
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: var(--sl-color-gray-400) var(--sl-color-gray-900); /* For Firefox */
+  scrollbar-gutter: stable;
+  overflow-y: auto; /* Makes the sidebar scrollable */
+}
+
+/* For Webkit Browsers (Chrome, Safari, etc.) */
+#starlight__sidebar::-webkit-scrollbar {
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s; /* Smooth transition for visibility */
+}
+
+#starlight__sidebar::-webkit-scrollbar:hover {
+  opacity: 1; /* Show the scrollbar when hovered */
+}
+
+#starlight__sidebar::-webkit-scrollbar-track {
+  background: var(--sl-color-gray-900); /* Track color */
+}
+
+#starlight__sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--sl-color-gray-400); /* Thumb color */
+}
+
