@@ -38,11 +38,11 @@ export default defineConfig({
     tagline:
       "Automated CAPTCHA recognition for qCAPTCHA, Awswaf, lemin, reCAPTCHA v2, , BLS, mtCaptcha, OCR etc",
     logo: {
-      light: "/public/logo_dark.png",
-      dark: "./public/logo_light.png",
+      light: "/public/logo/logo_dark.png",
+      dark: "./public/logo/logo_light.png",
       replacesTitle: false,
     },
-    favicon: "./public/logo_light.png",
+    favicon: "./public/logo/logo_light.png",
     defaultLocale: "root",
     locales: {
       root: {
@@ -63,7 +63,7 @@ export default defineConfig({
       starlightThemeRapide(),
       starlightBlog(),
       starlightHeadingBadges(),
-      starlightImageZoom(),
+      // starlightImageZoom(),
       // starlightOpenAPI([
       //   {
       //     base: "api",
