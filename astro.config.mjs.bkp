@@ -34,9 +34,9 @@ export default defineConfig({
         baseUrl: "https://github.com/noCaptchaAi/docs/edit/main/content/docs",
       },
       description:
-        "Automated CAPTCHA recognition for qCAPTCHA, Awswaf, lemin, reCAPTCHA v2, , BLS, mtCaptcha, OCR etc",
+        "Automated CAPTCHA recognition for Awswaf, lemin, reCAPTCHA v2, BLS, mtCaptcha, OCR etc",
       tagline:
-        "Automated CAPTCHA recognition for qCAPTCHA, Awswaf, lemin, reCAPTCHA v2, , BLS, mtCaptcha, OCR etc",
+        "Automated CAPTCHA recognition for Awswaf, lemin, reCAPTCHA v2, BLS, mtCaptcha, OCR etc",
       logo: {
         light: "/public/logo_dark.png",
         dark: "./public/logo_light.png",

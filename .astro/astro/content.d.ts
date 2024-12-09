@@ -271,13 +271,6 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".md"] };
-"guides/ImageTasks/qCaptcha.mdx": {
-	id: "guides/ImageTasks/qCaptcha.mdx";
-  slug: "guides/imagetasks/qcaptcha";
-  body: string;
-  collection: "docs";
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".mdx"] };
 "guides/ImageTasks/reCaptchaV2.mdx": {
 	id: "guides/ImageTasks/reCaptchaV2.mdx";
   slug: "guides/imagetasks/recaptchav2";
@@ -302,13 +295,6 @@ declare module 'astro:content' {
 "guides/TokenTasks/awswaf.md": {
 	id: "guides/TokenTasks/awswaf.md";
   slug: "guides/tokentasks/awswaf";
-  body: string;
-  collection: "docs";
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".md"] };
-"guides/TokenTasks/qCaptcha.md": {
-	id: "guides/TokenTasks/qCaptcha.md";
-  slug: "guides/tokentasks/qcaptcha";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
@@ -376,13 +362,6 @@ declare module 'astro:content' {
   collection: "docs";
   data: InferEntrySchema<"docs">
 } & { render(): Render[".mdx"] };
-"intro/abuse.mdx": {
-	id: "intro/abuse.mdx";
-  slug: "intro/abuse";
-  body: string;
-  collection: "docs";
-  data: InferEntrySchema<"docs">
-} & { render(): Render[".mdx"] };
 "intro/extension.mdx": {
 	id: "intro/extension.mdx";
   slug: "intro/extension";
@@ -400,6 +379,27 @@ declare module 'astro:content' {
 "intro/task.mdx": {
 	id: "intro/task.mdx";
   slug: "intro/task";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"legal/abuse.mdx": {
+	id: "legal/abuse.mdx";
+  slug: "legal/abuse";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"legal/privacy.mdx": {
+	id: "legal/privacy.mdx";
+  slug: "legal/privacy";
+  body: string;
+  collection: "docs";
+  data: InferEntrySchema<"docs">
+} & { render(): Render[".mdx"] };
+"legal/terms.mdx": {
+	id: "legal/terms.mdx";
+  slug: "legal/terms";
   body: string;
   collection: "docs";
   data: InferEntrySchema<"docs">
